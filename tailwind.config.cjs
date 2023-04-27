@@ -8,8 +8,12 @@ module.exports = {
         sans: ["InterVariable", "Inter", ...defaultTheme.fontFamily.sans],
       },
       colors: {
-        primary: "var(--color-primary)",
-        secondary: "var(--color-secondary)",
+        primary: "#00efa0",
+        secondary: "#1f5fab",
+        green2: "#449c99",
+        green3: "#135e5f",
+        blue2: "#113561",
+        black: "#030b18",
       },
       textColor: {
         default: "var(--color-text)",
@@ -24,8 +28,8 @@ module.exports = {
       },
     },
   },
-  corePlugins: {
-    fontSize: false,
-  },
+  // corePlugins: {
+  //   fontSize: false,
+  // },
   plugins: [require("@tailwindcss/typography")],
 };

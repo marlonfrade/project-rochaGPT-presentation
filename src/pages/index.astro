@@ -2,17 +2,26 @@
 import Container from "@components/container.astro";
 import Cta from "@components/cta.astro";
 import Features from "@components/features.astro";
-import Footer from "@components/footer.astro";
 import Hero from "@components/hero.astro";
-import Logos from "@components/logos.astro";
+import VideoPresentation from "@components/videopresentation.astro";
 import Layout from "@layouts/Layout.astro";
+import Faq from "@components/faq.astro";
+import Newsletter from "@components/newsletter.astro";
+import Stats from "@components/stats.astro";
+import Testimonials from "@components/testimonials.astro";
 ---
 
 <Layout title="">
   <Container>
     <Hero />
+    <VideoPresentation/>
     <Features />
-    <Logos />
-    <Cta />
+    <Stats />
   </Container>
+  <Cta />
+  <Container>
+    <Faq/>
+  </Container>
+  <Newsletter/>
+  <Testimonials/>
 </Layout>
