@@ -5,8 +5,7 @@ import Link from "@components/ui/link.astro";
 import { Icon } from "astro-icon";
 ---
 
-<main
-  class="grid lg:grid-cols-2 place-items-center pt-16 md:pt-12 md:pb-0">
+<main class="grid lg:grid-cols-2 place-items-center pt-16 md:pt-12 md:pb-0">
   <div class="py-6 md:order-1 hidden md:block">
     <Picture
       src={heroImage}
@@ -20,13 +19,14 @@ import { Icon } from "astro-icon";
   </div>
   <div>
     <h1
-      class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter">
-      Marketing website done with Astro
+      class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter"
+    >
+      Conectando pessoas, empresas e comunidades com IA
     </h1>
     <p class="text-lg mt-4 text-slate-600 max-w-xl">
-      Astroship is a starter template for startups, marketing websites & landing
-      pages.<wbr /> Built with Astro.build and TailwindCSS. You can quickly create
-      any website with this starter.
+      Simplifique a integração de IA com o &copy;WhatsApp e leve sua comunicação
+      ao próximo nível com a RochaGPT, a plataforma que conecta pessoas,
+      empresas e comunidades.
     </p>
     <div class="mt-6 flex flex-col sm:flex-row gap-3">
       <Link
@@ -34,10 +34,15 @@ import { Icon } from "astro-icon";
         href="https://web3templates.com/templates/astroship-starter-website-template-for-astro"
         target="_blank"
         class="flex gap-1 items-center justify-center"
-        rel="noopener">
-        <Icon class="text-white w-5 h-5" name="bx:bxs-cloud-download" />
+        rel="noopener"
+      >
+        <Icon
+          class="text-white w-5 h-5"
+          name="raphael:roadmap"
+          optimize="true"
+        />
 
-        Download for Free
+        Roadmap
       </Link>
       <Link
         size="lg"
@@ -45,9 +50,10 @@ import { Icon } from "astro-icon";
         rel="noopener"
         href="https://github.com/surjithctly/astroship"
         class="flex gap-1 items-center justify-center"
-        target="_blank">
-        <Icon class="text-black w-4 h-4" name="bx:bxl-github" />
-        GitHub Repo
+        target="_blank"
+      >
+        <Icon class="text-black w-4 h-4" name="raphael:diagram" />
+        Sobre o projeto
       </Link>
     </div>
   </div>

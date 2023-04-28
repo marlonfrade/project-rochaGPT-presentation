@@ -4,66 +4,70 @@ import { Icon } from "astro-icon";
 
 const features = [
   {
-    title: "Bring Your Own Framework",
+    title: " Integração para conversas em grupos do WhatsApp",
     description:
-      "Build your site using React, Svelte, Vue, Preact, web components, or just plain ol' HTML + JavaScript.",
+      "Converse com várias pessoas ao mesmo tempo em grupos no WhatsApp. Com esta funcionalidade, você pode ter uma comunicação eficiente e personalizada em seu negócio, ou mesmo em sua comunidade, com a facilidade de integração e personalização da IA em grupos.",
     icon: "bx:bxs-briefcase",
   },
   {
-    title: "100% Static HTML, No JS",
+    title: "Integração para conversas particulares no WhatsApp",
     description:
-      "Astro renders your entire page to static HTML, removing all JavaScript from your final build by default.",
+      "Com a integração do RochaGPT, você pode ter conversas particulares personalizadas no WhatsApp com a IA. Esta funcionalidade permite uma comunicação mais próxima e personalizada com seus clientes, fornecedores, parceiros de negócios ou até mesmo para uso pessoal, podendo solucionar problemas específicos ou oferecer suporte técnico especializado e também utilizar para dúvidas no dia a dia.",
     icon: "bx:bxs-window-alt",
   },
   {
-    title: "On-Demand Components",
+    title: "Personalize a sua IA",
     description:
-      "Need some JS? Astro can automatically hydrate interactive components when they become visible on the page.  ",
+      "Com o RochaGPT, você pode personalizar a sua IA para se adequar às necessidades do seu negócio. Essa funcionalidade permite ajustar as configurações da IA para se adaptar às demandas e objetivos específicos da sua empresa, tornando-a mais eficiente e relevante para suas necessidades.",
     icon: "bx:bxs-data",
   },
   {
-    title: "Broad Integration",
+    title: "Prompts pré-definidos para utilizar",
     description:
-      "Astro supports TypeScript, Scoped CSS, CSS Modules, Sass, Tailwind, Markdown, MDX, and any other npm packages.",
+      "Com o RochaGPT, você pode economizar tempo na criação de conversas com a IA utilizando os prompts pré-definidos. Essa funcionalidade oferece sugestões e modelos prontos para utilizar em suas conversas, facilitando a criação de novos diálogos e aumentando a eficiência do seu negócio.",
     icon: "bx:bxs-bot",
   },
   {
-    title: "SEO Enabled",
+    title: "Leitura de Vídeos no Youtube",
     description:
-      "Automatic sitemaps, RSS feeds, pagination and collections take the pain out of SEO and syndication. It just works!",
+      "Com o RochaGPT, você pode ler diretamente vídeos no YouTube, utilizando a IA para coletar dados e informações úteis. Essa funcionalidade permite analisar o texto dos vídeos, aumentando a precisão e eficiência da coleta de dados para sua IA.",
     icon: "bx:bxs-file-find",
   },
   {
-    title: "Community",
+    title: "Leitura de arquivos de links para atualização dos dados",
     description:
-      "Astro is an open source project powered by hundreds of contributors making thousands of individual contributions.",
+      "Com o RochaGPT, você pode atualizar seus dados de maneira simples e rápida, lendo arquivos ou links com a IA. Essa funcionalidade permite coletar informações de diversas fontes em um único lugar, otimizando o processo de coleta de dados e melhorando a precisão da análise dos dados coletados.",
     icon: "bx:bxs-user",
   },
 ];
 ---
 
-<div class="mt-16 md:mt-0">
-  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
-    Everything you need to start a website
-  </h2>
-  <p class="text-lg mt-4 text-slate-600">
-    Astro comes batteries included. It takes the best parts of state-of-the-art
-    tools and adds its own innovations.
-  </p>
-</div>
+<section class="lg:px-8">
+  <div class="mt-16 md:mt-24">
+    <h2 class="md:max-w-4xl text-4xl lg:text-5xl font-bold lg:tracking-tight">
+      Transforme seu WhatsApp em uma ferramenta de inteligência artificial com a
+      plataforma RochaGPT
+    </h2>
+    <p class="text-lg mt-4 text-slate-600">
+      O que o RochaGPT está preparando para aprimorar sua experiência:
+    </p>
+  </div>
 
-<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
-  {
-    features.map((item) => (
-      <div class="flex gap-4 items-start">
-        <div class="mt-1 bg-black rounded-full  p-2 w-8 h-8 shrink-0">
-          <Icon class="text-white" name={item.icon} />
+  <div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
+    {
+      features.map((item) => (
+        <div class="flex gap-4 items-start">
+          <div class="mt-1 bg-black rounded-full  p-2 w-8 h-8 shrink-0">
+            <Icon class="text-white" name={item.icon} />
+          </div>
+          <div>
+            <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
+            <p class="text-slate-500 mt-2 leading-relaxed">
+              {item.description}
+            </p>
+          </div>
         </div>
-        <div>
-          <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
-          <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
-        </div>
-      </div>
-    ))
-  }
-</div>
+      ))
+    }
+  </div>
+</section>
