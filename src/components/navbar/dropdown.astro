@@ -28,51 +28,45 @@ const { title, lastItem, children } = Astro.props;
       <div
         class="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5"
       >
-    
-          <div
-            class="px-3 lg:py-2 lg:bg-white lg:rounded-md lg:shadow lg:border flex flex-col"
-          >
-            {
-              children.map((item) => (
-                <div class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50">
-                  <div class="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                        <!-- <item.icon
-                       className="h-6 w-6 text-gray-600 group-hover:text-indigo-600"
-                      aria-hidden="true"
-                     />-->
-                  </div>
-                  <div class="flex-auto">
-                    <a
-                      href={item.path}
-                      class="block font-semibold text-gray-900"
-                    >
-                      {item.title}
-                      <span class="absolute inset-0" />
-                    </a>
-                    <p class="mt-1 text-gray-600">{item.description}</p>
-                  </div>
+        <div
+          class="px-3 lg:py-2 lg:bg-white lg:rounded-md lg:shadow lg:border flex flex-col"
+        >
+          {
+            children.map((item) => (
+              <div class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50">
+                <div class="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                  <Icon
+                    className="h-6 w-6 text-gray-600 group-hover:text-indigo-600"
+                    name={item.icon}
+                  />
                 </div>
-              ))
-            }
-          </div>
-          <div class="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
-            <a
-              href="#"
-              class="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100"
-            >
-            <Icon class="w-7 h-7" name="bi:play-fill"/>
-              Assistir Vídeo
-            </a>
-            <a
-            href="#"
+                <div class="flex-auto">
+                  <a href={item.path} class="block font-semibold text-gray-900">
+                    {item.title}
+                    <span class="absolute inset-0" />
+                  </a>
+                  <p class="mt-1 text-gray-600">{item.description}</p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+        <div class="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
+          <a
+            href="/#videoPresentation"
             class="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100"
-            >
-            <Icon class="w-6 h-6" name="bi:chat-text"/>
-                Contate a gente
-            
-            
-            </a>
-          </div>
+          >
+            <Icon class="w-7 h-7" name="bi:play-fill" />
+            Assistir Vídeo
+          </a>
+          <a
+            href="/contact"
+            class="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100"
+          >
+            <Icon class="w-6 h-6" name="bi:chat-text" />
+            Contate a gente
+          </a>
+        </div>
       </div>
     </DropdownItems>
   </Dropdown>

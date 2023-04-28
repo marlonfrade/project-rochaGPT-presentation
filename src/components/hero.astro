@@ -1,6 +1,6 @@
 ---
 import { Picture } from "@astrojs/image/components";
-import heroImage from "assets/hero.png";
+import heroImage from "@assets/hero.png";
 import Link from "@components/ui/link.astro";
 import { Icon } from "astro-icon";
 ---
@@ -12,7 +12,7 @@ import { Icon } from "astro-icon";
       alt="Astronaut in the air"
       widths={[200, 400, 600]}
       aspectRatio="4:3"
-      sizes="(max-width: 1000px) 100vw, 450px"
+      sizes="(max-width: 1000px) 100vw, 90%"
       loading="eager"
       format="avif"
     />
@@ -25,14 +25,13 @@ import { Icon } from "astro-icon";
     </h1>
     <p class="text-lg mt-4 text-slate-600 max-w-xl">
       Simplifique a integração de IA com o &copy;WhatsApp e leve sua comunicação
-      ao próximo nível com a RochaGPT, a plataforma que conecta pessoas,
+      ao próximo nível com o RochaGPT, a plataforma que conecta pessoas,
       empresas e comunidades.
     </p>
     <div class="mt-6 flex flex-col sm:flex-row gap-3">
       <Link
         href="#"
         href="/roadmap"
-        target="_blank"
         class="flex gap-1 items-center justify-center"
         rel="noopener"
       >
@@ -48,9 +47,8 @@ import { Icon } from "astro-icon";
         size="lg"
         style="outline"
         rel="noopener"
-        href="https://github.com/surjithctly/astroship"
+        href="/about"
         class="flex gap-1 items-center justify-center"
-        target="_blank"
       >
         <Icon class="text-black w-4 h-4" name="raphael:diagram" />
         Sobre o projeto

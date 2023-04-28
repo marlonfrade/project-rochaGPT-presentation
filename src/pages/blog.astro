@@ -16,12 +16,12 @@ publishedBlogEntries.sort(function (a, b) {
 });
 ---
 
-<Layout title="Blog">
+<Layout title="RochaGPT Blog">
   <Container>
     <Sectionhead>
-      <Fragment slot="title">Our Blog</Fragment>
+      <Fragment slot="title">RochaGPT Blog</Fragment>
       <Fragment slot="desc">
-        We write about building startups and thoughts going on our mind.
+        Artigos para melhorar a sua usabilidade com o RochaGPT.
       </Fragment>
     </Sectionhead>
     <main class="mt-16">
@@ -60,7 +60,8 @@ publishedBlogEntries.sort(function (a, b) {
                       <span class="text-gray-400">• </span>
                       <time
                         class="text-gray-400"
-                        datetime={blogPostEntry.data.publishDate.toISOString()}>
+                        datetime={blogPostEntry.data.publishDate.toISOString()}
+                      >
                         {blogPostEntry.data.publishDate.toDateString()}
                       </time>
                     </div>
