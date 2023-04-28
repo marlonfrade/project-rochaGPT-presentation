@@ -6,58 +6,49 @@ import Pricing from "@components/pricing.astro";
 
 const pricing = [
   {
-    name: "Personal",
-    price: "Free",
-    popular: false,
+    name: "Plano Pessoal",
+    price: "Grátis",
+    popular: true,
     features: [
-      "Lifetime free",
-      "Up to 3 users",
-      "Unlimited Pages",
-      "Astro Sub domain",
-      "Basic Integrations",
-      "Community Support",
+      "Integração para conversas do WhatsApp",
+      "Personalize a sua IA com o seu PROMPT",
+      "Prompts pré-definidos para utilizar",
+      "Leitura e resumo de Vídeos no Youtube",
     ],
     button: {
-      text: "Get Started",
+      text: "Fale com o RochaGPT",
       link: "/",
     },
   },
   {
-    name: "Startup",
-    price: {
-      monthly: "$19",
-      annual: "$16",
-      discount: "10%",
-      original: "$24",
-    },
-    popular: true,
+    name: "Plano Comunidade",
+    price: "Em breve",
+    popular: false,
     features: [
-      "All Free Features",
-      "Up to 20 users",
-      "20 Custom domains",
-      "Unlimited Collaborators",
-      "Advanced Integrations",
-      "Priority Support",
+      "Integração com o Discord",
+      "Integração para comunidades",
+      "Personalize a sua IA com o seu PROMPT",
+      "Criações de Imagens em tempo real",
+      "Leitura e resumo de Vídeos no Youtube",
     ],
     button: {
-      text: "Get Started",
+      text: "Em breve",
       link: "#",
     },
   },
   {
-    name: "Enterprise",
-    price: "Custom",
+    name: "Para Empresas",
+    price: "Personalizado",
     popular: false,
     features: [
-      "All Pro Features",
-      "Unlimited Custom domains",
-      "99.99% Uptime SLA",
-      "SAML & SSO Integration",
-      "Dedicated Account Manager",
-      "24/7 Phone Support",
+      "Planos personalizados",
+      "IA com conhecimento específico",
+      "IA programada para atender sua demanda",
+      "Treinamento especializado pelo nosso time",
+      "Acompanhamento e monitoramento do serviço",
     ],
     button: {
-      text: "Contact us",
+      text: "Contate a gente",
       link: "/contact",
     },
   },
@@ -67,14 +58,14 @@ const pricing = [
 <Layout title="Pricing">
   <Container>
     <Sectionhead>
-      <Fragment slot="title">Pricing</Fragment>
-      <Fragment slot="desc"
-        >Simple & Predictable pricing. No Surprises.</Fragment
-      >
+      <Fragment slot="title">Planos</Fragment>
+      <Fragment slot="desc">
+        Em breve novidades para as comunidades no discord.
+      </Fragment>
     </Sectionhead>
-
-    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-screen-lg mt-12">
-      {pricing.map((item) => <Pricing plan={item} />)}
-    </div>
   </Container>
+
+  <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-screen-lg mt-12">
+    {pricing.map((item) => <Pricing plan={item} />)}
+  </div>
 </Layout>

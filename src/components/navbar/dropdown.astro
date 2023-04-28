@@ -1,5 +1,6 @@
 ---
 import { Dropdown, DropdownItems } from "astro-navbar";
+import { Icon } from "astro-icon";
 const { title, lastItem, children } = Astro.props;
 ---
 
@@ -59,21 +60,17 @@ const { title, lastItem, children } = Astro.props;
               href="#"
               class="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100"
             >
-              <!-- <item.icon
-                class="h-5 w-5 flex-none text-gray-400"
-                aria-hidden="true"
-              /> -->
+            <Icon class="w-7 h-7" name="bi:play-fill"/>
               Assistir Vídeo
             </a>
             <a
-              href="#"
-              class="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100"
+            href="#"
+            class="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100"
             >
-              <!-- <item.icon
-                class="h-5 w-5 flex-none text-gray-400"
-                aria-hidden="true"
-              /> -->
-              Contate a gente
+            <Icon class="w-6 h-6" name="bi:chat-text"/>
+                Contate a gente
+            
+            
             </a>
           </div>
       </div>

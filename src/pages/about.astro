@@ -14,49 +14,83 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
 <Layout title="About">
   <Container>
     <Sectionhead>
-      <Fragment slot="title">About</Fragment>
-      <Fragment slot="desc">We are a small passionate team.</Fragment>
+      <Fragment slot="title">Sobre o Projeto RochaGPT</Fragment>
+      <Fragment slot="desc">Informações mais detalhadas.</Fragment>
     </Sectionhead>
 
     <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
-      <h2 class="font-bold text-3xl text-gray-800">
-        Empowering the world with Astro.
-      </h2>
       <p class="text-lg leading-relaxed text-slate-500">
-        We're a multi-cultural team from around the world! We come from diverse
-        backgrounds, bringing different personalities, experiences and skills to
-        the job. This is what makes our team so special.
+        O RochaGPT é uma plataforma de inteligência artificial que integra com o
+        WhatsApp para oferecer soluções de conversação eficientes e
+        personalizadas para empresas, comunidades e usuários em geral. Com o
+        RochaGPT, é possível conversar diretamente com a IA, trazendo novas
+        possibilidades de interação e comunicação para seus usuários.
+      </p>
+      <p class="text-lg leading-relaxed text-slate-500">
+        A plataforma oferece recursos exclusivos para seus usuários, como
+        adaptar a personalidade da IA, com setups pré-definidos, abstração de
+        dados através de vídeos no YouTube e leitura de arquivos para
+        atualização dos dados. Além disso, o RochaGPT foi construído obedecendo
+        normas da LGPD, garantindo que os dados dos usuários sejam utilizados
+        apenas durante o processo de resposta, sendo descartados imediatamente
+        após a finalização.
+      </p>
+      <p class="text-lg leading-relaxed text-slate-500">
+        O RochaGPT oferece um plano gratuito que já fornece várias
+        funcionalidades, também há planos corporativos ou ainda para
+        comunidades, com funções exclusivas e personalizáveis, como criação de
+        alertas, disparos em outros grupos ou agenda.
+      </p>
+      <p class="text-lg leading-relaxed text-slate-500">
+        Nosso objetivo é oferecer uma solução de inteligência artificial
+        acessível e segura para o público em geral e auxiliar no crescimento dos
+        negócios e comunidades. Com o RochaGPT, você tem a tecnologia de
+        inteligência artificial na palma da sua mão. Experimente agora e veja
+        como a sua comunicação pode ser mais eficiente e personalizada!
       </p>
     </div>
-    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
-      {
-        publishedTeamMembers.map((teamMemberEntry) => (
-          <div class="group">
-            <div class="w-full aspect-square">
-              <Picture
-                src={teamMemberEntry.data.avatar.src}
-                alt={teamMemberEntry.data.avatar.alt}
-                sizes="(max-width: 800px) 100vw, 400px"
-                widths={[200, 400]}
-                aspectRatio="1:1"
-                background="#ffffff"
-                fit="cover"
-                position="center"
-                class="w-full rounded-md rounded transition group-hover:-translate-y-1 group-hover:shadow-xl"
-              />
-            </div>
+    <div class="bg-white py-6 sm:py-8 lg:py-12 sm:my-5 lg:my-8">
+      <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
+        <div
+          class="flex flex-col overflow-hidden rounded-lg bg-gray-200 sm:flex-row md:h-80"
+        >
+          <!-- image - start -->
+          <div
+            class="order-first h-48 w-full bg-gray-300 sm:order-none sm:h-auto sm:w-1/2 lg:w-2/5"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?auto=format&q=75&fit=crop&w=1000"
+              loading="lazy"
+              alt="Photo by Andras Vas"
+              class="h-full w-full object-cover object-center"
+            />
+          </div>
+          <!-- image - end -->
 
-            <div class="mt-4 text-center">
-              <h2 class="text-lg text-gray-800">
-                {teamMemberEntry.data.name}
-              </h2>
-              <h3 class="text-sm text-slate-500">
-                {teamMemberEntry.data.title}
-              </h3>
+          <!-- content - start -->
+          <div class="flex w-full flex-col p-4 sm:w-1/2 sm:p-8 lg:w-3/5">
+            <h2
+              class="mb-4 text-xl font-bold text-gray-800 md:text-2xl lg:text-4xl"
+            >
+              Fale com o RochaGPT
+            </h2>
+
+            <p class="mb-8 max-w-md text-gray-600">
+              Aprimore sua comunicação no WhatsApp com segurança usando a
+              tecnologia de IA RochaGPT.
+            </p>
+
+            <div class="mt-auto">
+              <a
+                href="#"
+                class="inline-block rounded-lg bg-white px-8 py-3 text-center text-sm font-semibold text-gray-800 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-100 focus-visible:ring active:bg-gray-200 md:text-base"
+                >Fale com o RochaGPT</a
+              >
             </div>
           </div>
-        ))
-      }
+          <!-- content - end -->
+        </div>
+      </div>
     </div>
   </Container>
 </Layout>
