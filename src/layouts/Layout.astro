@@ -8,9 +8,14 @@ export interface Props {
   title: string;
 }
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
+const { generator, site } = Astro;
+const image = new URL("social.jpeg", site);
+const description =
+  "RochaGPT - Conectando pessoas, empresas e comunidades com IA. Simplifique a integração de IA com o ©WhatsApp e leve sua comunicação ao próximo nível com o RochaGPT, a plataforma que conecta pessoas, empresas e comunidades.";
 
-const resolvedImageWithDomain = new URL("social.jpeg", Astro.site).toString();
+// const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
+
+// const resolvedImageWithDomain = new URL("social.jpeg", Astro.site).toString();
 
 const { title } = Astro.props;
 
@@ -25,10 +30,20 @@ const makeTitle = title
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon_io/favicon.ico" />
-    <meta name="generator" content={Astro.generator} />
+    <meta name="generator" content={generator} />
 
-    <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
-    <SEO
+    <title>{makeTitle}</title>
+    <meta name="description" content={description} />
+
+    <!-- social media -->
+    <meta property="og:title" content="Lucy" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:url" content={site} />
+    <meta name="twitter:card" content={image} />
+
+    <!-- <SEO
       title={makeTitle}
       description="O RochaGPT é uma plataforma de inteligência artificial que utiliza o GPT-3.5 da OpenAI para gerar respostas precisas e personalizadas em grupos ou chats privados do seu Whatsapp. "
       canonical={canonicalURL}
@@ -48,7 +63,7 @@ const makeTitle = title
           alt: "RochaGPT - Conectando pessoas, empresas e comunidades com IA",
         },
       }}
-    />
+    /> -->
   </head>
 
   <body class="scroll-smooth">

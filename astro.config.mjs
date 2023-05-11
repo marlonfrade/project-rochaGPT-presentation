@@ -5,7 +5,7 @@ import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
-  site: "https://astro-moon-landing.netlify.app/",
+  site: "https://rochagpt.ai",
   integrations: [
     tailwind(),
     image({
