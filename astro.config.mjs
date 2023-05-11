@@ -5,7 +5,7 @@ import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
-  site: "https://rochagpt.ai",
+  site: "https://rochagpt.netlify.app/",
   integrations: [
     tailwind(),
     image({
