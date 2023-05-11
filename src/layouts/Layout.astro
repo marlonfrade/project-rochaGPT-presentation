@@ -13,10 +13,6 @@ const image = new URL("social.jpeg", site);
 const description =
   "RochaGPT - Conectando pessoas, empresas e comunidades com IA. Simplifique a integração de IA com o ©WhatsApp e leve sua comunicação ao próximo nível com o RochaGPT, a plataforma que conecta pessoas, empresas e comunidades.";
 
-// const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
-
-// const resolvedImageWithDomain = new URL("social.jpeg", Astro.site).toString();
-
 const { title } = Astro.props;
 
 const makeTitle = title
@@ -42,28 +38,6 @@ const makeTitle = title
     <meta property="og:image" content={image} />
     <meta property="og:url" content={site} />
     <meta name="twitter:card" content={image} />
-
-    <!-- <SEO
-      title={makeTitle}
-      description="O RochaGPT é uma plataforma de inteligência artificial que utiliza o GPT-3.5 da OpenAI para gerar respostas precisas e personalizadas em grupos ou chats privados do seu Whatsapp. "
-      canonical={canonicalURL}
-      twitter={{
-        creator: "@MonkeyBranch",
-        site: "@MonkeyBranch",
-        card: "summary_large_image",
-      }}
-      openGraph={{
-        basic: {
-          url: canonicalURL,
-          type: "website",
-          title: `RochaGPT - Conectando pessoas, empresas e comunidades com IA`,
-          image: resolvedImageWithDomain,
-        },
-        image: {
-          alt: "RochaGPT - Conectando pessoas, empresas e comunidades com IA",
-        },
-      }}
-    /> -->
   </head>
 
   <body class="scroll-smooth">
