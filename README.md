@@ -1,127 +1,104 @@
-# Astroship - Astro Starter Template 🛸
+# 👋 Olá Dev, Bem vindo ao RochaGPT
 
-Astroship is a starter template for startups, marketing websites, landing pages & blog. Built with Astro & TailwindCSS.
+![GitHub repo size](https://img.shields.io/github/repo-size/marlonfrade/project-rochaGPT-presentation?style=for-the-badge)
 
-This Free Template is sponsored by [Web3Templates](https://web3templates.com)
+![GitHub language count](https://img.shields.io/github/languages/count/marlonfrade/project-rochaGPT-presentation?style=for-the-badge)
 
-## Live Demo
+![GitHub forks](https://img.shields.io/github/forks/marlonfrade/project-rochaGPT-presentation?style=for-the-badge)
 
-### [https://astroship.web3templates.com/](https://astroship.web3templates.com/)
+![Bitbucket open issues](https://img.shields.io/bitbucket/issues/marlonfrade/project-rochaGPT-presentation?style=for-the-badge)
 
-### [Download Astroship Template](https://web3templates.com/templates/astroship-starter-website-template-for-astro)
+![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/marlonfrade/project-rochaGPT-presentation?style=for-the-badge)
 
-## Deploy this template
+## 🚀 [Visualizar Site](https://rochagpt.ai/)
 
-You can instantly clone this to your GitHub and deploy the site by clicking the below buttons to deploy to your chosen providers!
+> RochaGPT, Conectando pessoas, empresas e comunidades com IA. Simplifique a integração de IA com o ©WhatsApp e leve sua comunicação ao próximo nível com o RochaGPT, a plataforma que conecta pessoas, empresas e comunidades.
 
-Click here to deploy on Vercel:
+# 🗄️ Documentos e Referências do projeto.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fsurjithctly%2Fastroship&project-name=astroship&repository-name=astroship&demo-title=Astroship%20-%20Astro%20Starter%20Template&demo-description=Astroship%20is%20a%20starter%20template%20for%20startups%2C%20marketing%20websites%20%26%20landing%20pages.%20Built%20with%20Astro%2C%20TailwindCSS&demo-url=https%3A%2F%2Fastroship.web3templates.com%2F&demo-image=https%3A%2F%2Fuser-images.githubusercontent.com%2F1884712%2F200831799-10ef2456-a02e-4068-b580-4b5326f0b33b.png)
+1. [Documentação do Astro](https://docs.astro.build/pt-br/getting-started/)
 
-Click here to deploy on Netlify:
+# 🌳 Navegando pelo projeto
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/surjithctly/astroship)
+```
+src/
+├── assets
+│   ├── hero.png
+│   ├── hub-icon.svg
+│   ├── lucy-hero.png
+│   ├── lucy-hero2.png
+│   └── spam-icon.svg
+├── components
+│   ├── contactform.astro
+│   ├── container.astro
+│   ├── cta.astro
+│   ├── faq.astro
+│   ├── features.astro
+│   ├── footer.astro
+│   ├── hero.astro
+│   ├── navbar
+│   │   ├── dropdown.astro
+│   │   └── navbar.astro
+│   ├── newsletter.astro
+│   ├── pricing.astro
+│   ├── sectionhead.astro
+│   ├── stats.astro
+│   ├── testimonials.astro
+│   ├── ui
+│   │   ├── button.astro
+│   │   ├── icons
+│   │   │   ├── index.js
+│   │   │   └── tick.astro
+│   │   └── link.astro
+│   └── videopresentation.astro
+├── content
+│   ├── blog
+│   │   ├── a-automacao-de-processos-com-ia.md
+│   │   ├── a-ia-no-wpp-para-aumentar-a-produtividade.md
+│   │   ├── a-importancia-de-inteligencia-artificial-no-wpp.md
+│   │   └── como-a-ia-pode-auxiliar-na-seguranca.md
+│   └── config.ts
+├── env.d.ts
+├── layouts
+│   ├── BlogLayout.astro
+│   └── Layout.astro
+├── pages
+│   ├── 404.astro
+│   ├── about.astro
+│   ├── blog
+│   │   └── [slug].astro
+│   ├── blog.astro
+│   ├── contact.astro
+│   ├── index.astro
+│   ├── lucy.astro
+│   ├── pricing.astro
+│   └── roadmap.astro
+└── utils
+    └── all.js
+```
 
-## Preview
+# 👨‍💻 Trabalhando no Projeto
 
-![image](https://user-images.githubusercontent.com/1884712/200831799-10ef2456-a02e-4068-b580-4b5326f0b33b.png)
-
-### Pagespeed Score
-
-[![pagespeed](https://user-images.githubusercontent.com/1884712/210250214-7aa98167-7993-4b90-8138-326b8fa0c223.png)](https://pagespeed.web.dev/report?url=https%3A%2F%2Fastroship.web3templates.com%2F)
-
-
-## Installation
-
-If you are reading this on github, you can click on the "Use this template" button above to create a new repository from astroship to your account. Then you can do a `git clone` to clone it to your local system.
-
-Alternatively, you can clone the project directly from this repo to your local system.
-
-### 1. Clone the repo
+Clone o Projeto:
 
 ```bash
-git clone https://github.com/surjithctly/astroship.git myProjectName
-# or
-git clone https://github.com/surjithctly/astroship.git .
+  git clone https://link-to-project
 ```
 
-The `.` will clone it to the current directory so make sure you are inside your project folder first.
-
-### 2. Install Dependencies
+Acesse o diretório que você clonou:
 
 ```bash
-npm install
-# or
-yarn install
-# or (recommended)
-pnpm install
+  cd my-project
 ```
 
-### 3. Start development Server
+Instale as dependências do projeto:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or (recommended)
-pnpm dev
+  yarn
 ```
 
-### Preview & Build
+Rode o projeto no localhost:
 
 ```bash
-npm run preview
-npm run build
-# or
-yarn preview
-yarn build
-# or (recommended)
-pnpm preview
-pnpm build
+  yarn dev
 ```
-
-We recommend using [pnpm](https://pnpm.io/) to save disk space on your computer.
-
-### Other Commands
-
-```bash
-pnpm astro ...
-pnpm astro add
-pnpm astro --help
-```
-
-## Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```
-/
-├── public/
-│   └── ...
-├── src/
-│   ├── components/
-│   │   └── ...
-│   ├── layouts/
-│   │   └── ...
-│   └── pages/
-│       └── ...
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## TailwindCSS
-
-TailwindCSS is already configured in this repo, so you can start using it without any installation.
-
-## Credits
-
-[Hero Illustration](https://www.figma.com/community/file/1108400791662599811) by [Streamline](https://www.streamlinehq.com/)
-
-## 👀 Want to learn more?
-
-Feel free to check out [Astro Docs](https://docs.astro.build) or jump into our [Discord Chat](https://web3templates.com/discord).
-
-[![Built with Astro](https://astro.badg.es/v1/built-with-astro.svg)](https://astro.build)
