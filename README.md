@@ -12,6 +12,9 @@
 
 ## 🚀 [Visualizar Site](https://rochagpt.ai/)
 
+![social](https://github.com/marlonfrade/project-rochaGPT-presentation/assets/84466506/1922b29f-032a-42ab-a326-8ad742fb26a3)
+
+
 > RochaGPT, Conectando pessoas, empresas e comunidades com IA. Simplifique a integração de IA com o ©WhatsApp e leve sua comunicação ao próximo nível com o RochaGPT, a plataforma que conecta pessoas, empresas e comunidades.
 
 # 🗄️ Documentos e Referências do projeto.
