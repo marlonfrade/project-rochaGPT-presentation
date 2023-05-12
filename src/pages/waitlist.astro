@@ -1,0 +1,125 @@
+---
+import "@fontsource/inter/variable.css";
+
+const { generator, site } = Astro;
+const image = new URL("social.jpeg", site);
+const description =
+  "RochaGPT - Conectando pessoas, empresas e comunidades com IA. Simplifique a integração de IA com o ©WhatsApp e leve sua comunicação ao próximo nível com o RochaGPT, a plataforma que conecta pessoas, empresas e comunidades.";
+
+const title = "WaitList RochaGPT";
+
+const makeTitle = title
+  ? title + " | " + "RochaGPT"
+  : "RochaGPT - Conectando pessoas, empresas e comunidades com IA";
+---
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/x-icon" href="/favicon_io/favicon.ico" />
+    <meta name="generator" content={generator} />
+
+    <title>{makeTitle}</title>
+    <meta name="description" content={description} />
+
+    <!-- social media -->
+    <meta property="og:title" content="RochaGPT" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:url" content={site} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VZZFLHWJ26"
+    ></script><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-VZZFLHWJ26");
+    </script>
+  </head>
+
+  <body class="scroll-smooth">
+    <main id="swup" class="wrapper bg-gray-800 min-h-screen">
+      <section class="w-full">
+        <div
+          class="relative items-center w-full px-5 py-12 mx-auto md:px-12 lg:px-16 max-w-7xl lg:py-24"
+        >
+          <div class="flex w-full mx-auto text-left">
+            <div class="relative inline-flex items-center mx-auto align-middle">
+              <div class="pb-12 text-center">
+                <h1
+                  class="max-w-5xl text-2xl text-white font-bold leading-none tracking-tighter md:text-5xl lg:text-6xl lg:max-w-7xl"
+                >
+                  Venha fazer parte <br class="hidden lg:block" />
+                  do RochaGPT!
+                </h1>
+                <form
+                  action=""
+                  method="post"
+                  id="revue-form"
+                  name="revue-form"
+                  target="_blank"
+                  class="p-2 mt-8 transition duration-500 ease-in-out transform border2 bg-gray-50 md:mx-auto rounded-xl sm:max-w-3xl lg:flex"
+                >
+                  <div
+                    class="divide-y lg:divide-x lg:divide-y-0 lg:flex space-y 4"
+                  >
+                    <div class="flex-1 min-w-0 revue-form-group">
+                      <label for="name" class="sr-only">Name</label>
+                      <input
+                        id="name"
+                        type="text"
+                        class="block w-full px-5 py-3 text-base text-neutral-600 placeholder-gray-300 transition duration-500 ease-in-out transform bg-transparent border border-transparent rounded-md focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300"
+                        placeholder="Digite seu nome "
+                        required
+                      />
+                    </div>
+                    <div class="flex-1 min-w-0 revue-form-group">
+                      <label for="member_email" class="sr-only"
+                        >Email address</label
+                      >
+                      <input
+                        id="cta-email"
+                        type="email"
+                        class="block w-full px-5 py-3 text-base text-neutral-600 placeholder-gray-300 transition duration-500 ease-in-out transform bg-transparent border border-transparent rounded-md focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300"
+                        placeholder="Digite seu email  "
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="mt-4 sm:mt-0 lg:ml-3 revue-form-actions">
+                    <button
+                      type="submit"
+                      value="Subscribe"
+                      name="member[subscribe]"
+                      id="member_submit"
+                      class="block w-full px-5 py-3 text-base font-medium text-white bg-blue-600 border border-transparent rounded-lg shadow hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300 sm:px-10"
+                      >Enviar</button
+                    >
+                  </div>
+                </form>
+                <div class="sm:max-w-lg sm:flex md:mx-auto">
+                  <p class="mt-3 text-xs text-gray-500">
+                    By subscribing, you agree with Revue’s
+                    <a target="_blank" href="https://www.getrevue.co/terms"
+                      >Terms of Service</a
+                    >
+                    and
+                    <a target="_blank" href="https://www.getrevue.co/privacy"
+                      >Privacy Policy</a
+                    >.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

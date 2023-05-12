@@ -51,7 +51,9 @@ const makeTitle = title
 
   <body class="scroll-smooth">
     <Navbar />
-    <slot />
+    <main id="swup" class="wrapper">
+      <slot />
+    </main>
     <Footer />
     <style is:global>
       /* Improve Page speed */

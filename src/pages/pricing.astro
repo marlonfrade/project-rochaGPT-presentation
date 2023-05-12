@@ -2,66 +2,6 @@
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
-import Pricing from "@components/pricing.astro";
-
-const pricing = [
-  {
-    name: "Plano Pessoal",
-    price: "Grátis",
-    popular: true,
-    features: [
-      "IA integrada ao Whatsapp",
-      "Personalização de PROMPTs por chat ou grupo",
-      "Escolha de PROMPTs pré-definidos",
-      "Geração de imagens",
-    ],
-    button: {
-      text: "Fale com o RochaGPT",
-      link: "https://wa.me/554789099607?text=Olá,%20RochatGPT!",
-    },
-  },
-  {
-    name: "Plano Comunidade",
-    price: "Em breve",
-    popular: false,
-    features: [
-      "IA integrada ao Whatsapp",
-      "Personalização de PROMPTs por chat ou grupo",
-      "Escolha de PROMPTs pré-definidos",
-      "Geração de imagens",
-      "Leitura e processamento de arquivos de texto",
-      "Leitura e processamento de vídeos do youtube",
-      "Leitura, consumo e processamento de APIs",
-      "Ajuste Fino (treinamento da IA)",
-      "Contratação de um número exclusivo e personalização do BOT",
-      "Disparo de alertas em diferentes grupos configurados",
-    ],
-    button: {
-      text: "Em breve",
-      link: "#",
-    },
-  },
-  {
-    name: "Para Empresas",
-    price: "Personalizado",
-    popular: false,
-    features: [
-      "IA integrada ao Whatsapp",
-      "Personalização de PROMPTs por chat ou grupo",
-      "Escolha de PROMPTs pré-definidos",
-      "Geração de imagens",
-      "Leitura e processamento de arquivos de texto",
-      "Leitura e processamento de vídeos do youtube",
-      "Leitura, consumo e processamento de APIs",
-      "Ajuste Fino (treinamento da IA)",
-      "Contratação de um número exclusivo e personalização do BOT",
-    ],
-    button: {
-      text: "Contate a gente",
-      link: "/contact",
-    },
-  },
-];
 ---
 
 <Layout title="Planos">
@@ -73,8 +13,268 @@ const pricing = [
       </Fragment>
     </Sectionhead>
   </Container>
+  <div class="xl:container m-auto px-6 py-10 md:px-12 lg:px-20">
+    <div class="mt-12 grid items-center gap-6 lg:flex lg:space-x-8">
+      <div class="group relative md:col-span-1 lg:w-[32%]">
+        <div
+          aria-hidden="true"
+          class="absolute top-0 h-full w-full rounded-3xl border border-gray-700 bg-gray-800 shadow-2xl shadow-gray-600/10 transition duration-500 group-hover:scale-105 lg:group-hover:scale-110"
+        >
+        </div>
+        <div class="relative space-y-8 p-8">
+          <h3 class="text-center text-3xl font-semibold text-white">
+            Para Empresas
+          </h3>
+          <div class="relative flex justify-around">
+            <div class="flex">
+              <span class="leading-0 text-4xl font-bold text-white"
+                >Personalizado</span
+              >
+            </div>
+          </div>
+          <ul role="list" class="m-auto w-max space-y-4 pb-6 text-gray-300">
+            <li class="space-x-2">
+              <span class="font-semibold text-primary">&check;</span>
+              <span>IA integrada no Whatsapp</span>
+            </li>
+            <li class="space-x-2">
+              <span class="font-semibold text-primary">&check;</span>
+              <span>Personalização de PROMPTs</span>
+            </li>
+            <li class="space-x-2">
+              <span class="font-semibold text-primary">&check;</span>
+              <span>Escolha de PROMPTs pré-definidos</span>
+            </li>
+            <li class="space-x-2">
+              <span class="font-semibold text-primary">&check;</span>
+              <span>Leitura e processamento de texto</span>
+            </li>
+            <li class="space-x-2">
+              <span class="font-semibold text-primary">&check;</span>
+              <span>Leitura e processamento de vídeos</span>
+            </li>
+            <li class="space-x-2">
+              <span class="font-semibold text-primary">&check;</span>
+              <span>Leitura e processamento de APIs</span>
+            </li>
+            <li class="space-x-2">
+              <span class="font-semibold text-primary">&check;</span>
+              <span>Ajuste Fino (treinamento da IA)</span>
+            </li>
+            <li class="space-x-2">
+              <span class="font-semibold text-primary">&check;</span>
+              <span>Contratação de um número</span>
+            </li>
+            <li class="space-x-2">
+              <span class="font-semibold text-primary">&check;</span>
+              <span>Personalização do BOT</span>
+            </li>
+            <li class="space-x-2">
+              <span class="font-semibold text-primary">&check;</span>
+              <span>Disparo de alertas em grupos</span>
+            </li>
+          </ul>
+          <a
+            href="/contact"
+            class="relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95"
+          >
+            <span class="relative text-base font-semibold text-white"
+              >Contate a Gente!</span
+            >
+          </a>
+        </div>
+      </div>
 
-  <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-screen-lg mt-12">
-    {pricing.map((item) => <Pricing plan={item} />)}
+      <div class="group relative row-start-1 md:col-span-2 lg:w-[36%]">
+        <span class="premium-plan"></span>
+        <div
+          aria-hidden="true"
+          class="absolute top-0 h-full w-full rounded-3xl border border-gray-700 bg-gray-800 shadow-2xl shadow-gray-600/10 transition duration-500"
+        >
+        </div>
+        <div class="relative space-y-8 p-8">
+          <h3 class="text-center pt-4 text-3xl font-semibold text-white">
+            Plano Exclusivo!
+          </h3>
+          <div class="overflow-hidden">
+            <div class="-mr-20 flex items-end justify-center">
+              <div class="flex">
+                <span class="-ml-6 mt-2 text-3xl font-bold text-primary"
+                  >R$</span
+                >
+                <span class="leading-0 text-8xl font-bold text-white">30</span>
+              </div>
+              <div class="mb-2">
+                <span class="block text-xl font-bold text-gray-400">.00</span>
+                <span class="block text-xl font-bold text-primary">/ Mês</span>
+              </div>
+            </div>
+            <div class="text-center text-2xl font-medium">
+              <span class="text-gray-400 line-through">R$600</span>
+              <span class="font-semibold text-white">R$360</span>
+            </div>
+            <span class="block text-center text-xs uppercase text-primary"
+              >Economia anual</span
+            >
+            <span
+              class="m-auto mt-4 block w-max rounded-full bg-gradient-to-r from-green-500 to-primary px-4 py-1 text-sm font-medium text-white"
+              >Desconto Exclusivo WaitList</span
+            >
+          </div>
+          <ul role="list" class="m-auto w-max space-y-4 pb-6 text-gray-300">
+            <li class="space-x-2">
+              <span class="font-semibold text-primary">&check;</span>
+              <span>IA integrada ao Whatsapp</span>
+            </li>
+            <li class="space-x-2">
+              <span class="font-semibold text-primary">&check;</span>
+              <span>Personalização de PROMPTs</span>
+            </li>
+            <li class="space-x-2">
+              <span class="font-semibold text-primary">&check;</span>
+              <span>Escolha de PROMPTs pré-definidos</span>
+            </li>
+            <li class="space-x-2">
+              <span class="font-semibold text-primary">&check;</span>
+              <span>Geração de imagens</span>
+            </li>
+            <li class="space-x-2">
+              <span class="font-semibold text-primary">&check;</span>
+              <span>Leitura e processamento de texto</span>
+            </li>
+            <li class="space-x-2">
+              <span class="font-semibold text-primary">&check;</span>
+              <span>Leitura e processamento de vídeos</span>
+            </li>
+            <li class="space-x-2">
+              <span class="font-semibold text-primary">&check;</span>
+              <span>Leitura e processamento de APIs</span>
+            </li>
+            <li class="space-x-2">
+              <span class="font-semibold text-primary">&check;</span>
+              <span>Ajuste Fino (treinamento da IA)</span>
+            </li>
+            <li class="space-x-2">
+              <span class="font-semibold text-primary">&check;</span>
+              <span>Contratação de um número exclusivo</span>
+            </li>
+            <li class="space-x-2">
+              <span class="font-semibold text-primary">&check;</span>
+              <span>Personalização do BOT</span>
+            </li>
+            <li class="space-x-2">
+              <span class="font-semibold text-primary">&check;</span>
+              <span>Disparo de alertas em grupos</span>
+            </li>
+          </ul>
+          <a
+            href="/waitlist"
+            class="relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95"
+          >
+            <span class="relative text-base font-semibold text-white"
+              >Aproveite Agora!</span
+            >
+          </a>
+        </div>
+      </div>
+
+      <div class="group relative md:col-span-1 lg:w-[32%]">
+        <div
+          aria-hidden="true"
+          class="absolute top-0 h-full w-full rounded-3xl border border-gray-700 bg-gray-800 shadow-2xl shadow-gray-600/10 transition duration-500 group-hover:scale-105 lg:group-hover:scale-110"
+        >
+        </div>
+        <div class="relative space-y-8 p-8">
+          <h3 class="text-center text-3xl font-semibold text-white">
+            Para Pessoas
+          </h3>
+          <div class="relative flex justify-around">
+            <div class="flex">
+              <span class="-ml-2 mt-2 text-3xl font-bold text-primary">R$</span>
+              <span class="leading-0 text-8xl font-bold text-white">0</span>
+            </div>
+          </div>
+          <span
+            class="m-auto block w-max rounded-full bg-gradient-to-r from-green-500 to-primary px-4 py-1 text-sm font-medium text-white"
+            >Grátis</span
+          >
+          <ul role="list" class="m-auto w-max space-y-4 pb-6 text-gray-300">
+            <li class="space-x-2">
+              <span class="font-semibold text-primary">&check;</span>
+              <span>IA integrada ao Whatsapp</span>
+            </li>
+          </ul>
+          <a
+            href="https://wa.me/554789099607?text=Olá,%20RochatGPT!"
+            target="_blank"
+            class="relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:border before:border-gray-600 before:bg-gray-700 before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95"
+          >
+            <span class="relative text-base font-semibold text-white"
+              >Fale com o RochaGPT</span
+            >
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
+
+  <style is:global>
+    .premium-plan {
+      z-index: 1;
+      position: absolute;
+      overflow: hidden;
+      width: 150px;
+      height: 150px;
+      top: -10px;
+      left: -10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .premium-plan::before {
+      content: "Novidade";
+      position: absolute;
+      width: 150%;
+      height: 40px;
+      background-image: linear-gradient(
+        45deg,
+        #00efa0 0%,
+        #03d58f 51%,
+        #00efa0 100%
+      );
+      transform: rotate(-45deg) translateY(-20px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.23);
+    }
+
+    .premium-plan:hover,
+    .premium-plan::before:hover,
+    .premium-plan::after:hover {
+      transform: scale(1.05);
+    }
+
+    .premium-plan::after {
+      content: "";
+      position: absolute;
+      width: 10px;
+      bottom: 0;
+      left: 0;
+      height: 10px;
+      z-index: -1;
+      box-shadow: 140px -140px #00c583;
+      background-image: linear-gradient(
+        45deg,
+        #00efa0 0%,
+        #00efa0 51%,
+        #00efa0 100%
+      );
+    }
+  </style>
 </Layout>
