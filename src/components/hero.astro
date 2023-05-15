@@ -1,42 +1,41 @@
 ---
 import { Picture } from "@astrojs/image/components";
-import heroImage from "@assets/hero.png";
+import heroImage from "@assets/rochaGPT.png";
 import Link from "@components/ui/link.astro";
 import { Icon } from "astro-icon";
 ---
 
-<main class="grid lg:grid-cols-2 place-items-center pt-16 md:pt-12 md:pb-0">
-  <div class="py-6 md:order-1 hidden md:block">
+<main class="grid place-items-center pt-16 md:pb-0 md:pt-12 lg:grid-cols-2">
+  <div class="hidden py-6 md:order-1 md:block">
     <Picture
       src={heroImage}
       alt="Astronaut in the air"
-      widths={[200, 400, 600]}
-      aspectRatio="4:3"
-      sizes="(max-width: 1000px) 100vw, 90%"
+      widths={[200, 400, 600, 800]}
+      sizes="(max-width: 500px) 10vw, 100%"
       loading="eager"
       format="avif"
     />
   </div>
   <div>
     <h1
-      class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter"
+      class="text-5xl font-bold lg:text-6xl lg:tracking-tight xl:text-7xl xl:tracking-tighter"
     >
       Conectando pessoas, empresas e comunidades com IA
     </h1>
-    <p class="text-lg mt-4 text-slate-600 max-w-xl">
+    <p class="mt-4 max-w-xl text-lg text-slate-600">
       Simplifique a integração de IA com o &copy;WhatsApp e leve sua comunicação
       ao próximo nível com o RochaGPT, a plataforma que conecta pessoas,
       empresas e comunidades.
     </p>
-    <div class="mt-6 flex flex-col sm:flex-row gap-3">
+    <div class="mt-6 flex flex-col gap-3 sm:flex-row">
       <Link
         href="#"
         href="/roadmap"
-        class="flex gap-1 items-center justify-center"
+        class="flex items-center justify-center gap-1"
         rel="noopener"
       >
         <Icon
-          class="text-white w-5 h-5"
+          class="h-5 w-5 text-white"
           name="raphael:roadmap"
           optimize="true"
         />
@@ -48,9 +47,9 @@ import { Icon } from "astro-icon";
         style="outline"
         rel="noopener"
         href="/about"
-        class="flex gap-1 items-center justify-center"
+        class="flex items-center justify-center gap-1"
       >
-        <Icon class="text-black w-4 h-4" name="raphael:diagram" />
+        <Icon class="h-4 w-4 text-black" name="raphael:diagram" />
         Sobre o projeto
       </Link>
     </div>

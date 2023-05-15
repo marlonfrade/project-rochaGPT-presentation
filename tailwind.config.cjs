@@ -31,5 +31,8 @@ module.exports = {
   // corePlugins: {
   //   fontSize: false,
   // },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [
+    require("@tailwindcss/typography"),
+    require("@tushargugnani/tailwind-group-peer-checked"),
+  ],
 };
