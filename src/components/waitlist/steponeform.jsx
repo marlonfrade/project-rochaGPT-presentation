@@ -1,10 +1,12 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { motion } from "framer-motion";
+import Terms from "./modalterms";
 
 const StepOneForm = ({ data, activeStep, setActiveStep }) => {
   if (activeStep !== 1) {
     return null;
   }
+  const [open, setOpen] = useState(false);
   const nameInput = useRef(null);
   const emailInput = useRef(null);
   const submitBtn = useRef(null);
@@ -29,9 +31,26 @@ const StepOneForm = ({ data, activeStep, setActiveStep }) => {
   };
 
   return (
-    <div className="mx-auto flex w-full text-left">
+    <div className="relative mx-auto flex h-full min-h-screen w-full text-left">
+      <Terms open={open} setOpen={setOpen} />
+      <a href="/pricing">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="absolute right-0 top-0 m-3 h-6 w-6 cursor-pointer text-gray-400"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      </a>
       <div className="relative mx-auto inline-flex items-center align-middle">
-        <div className="pb-12 text-center">
+        <div className="px-4 pb-12 text-center">
           <motion.h1
             initial={{ x: -200, opacity: 0 }}
             whileInView={{
@@ -42,7 +61,7 @@ const StepOneForm = ({ data, activeStep, setActiveStep }) => {
                 delay: 0.2,
               },
             }}
-            className="max-w-5xl text-2xl font-bold leading-none tracking-tighter text-white md:text-5xl lg:max-w-7xl lg:text-6xl"
+            className="text-4xl font-bold leading-none tracking-tighter text-white sm:max-w-5xl md:text-5xl lg:max-w-7xl lg:text-6xl"
           >
             Venha fazer parte <br className="hidden lg:block" />
             do RochaGPT!
@@ -112,7 +131,7 @@ const StepOneForm = ({ data, activeStep, setActiveStep }) => {
                 id="member_submit"
                 className="block w-full rounded-lg border border-transparent bg-primary px-5 py-3 text-base font-medium text-white shadow transition-colors ease-in-out hover:bg-green-400 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300 sm:px-10"
               >
-                Enviar
+                Prosseguir
               </motion.button>
             </div>
           </form>
@@ -130,15 +149,21 @@ const StepOneForm = ({ data, activeStep, setActiveStep }) => {
           >
             <p className="mt-3 text-xs text-gray-500">
               Ao se inscrever, você concorda com nossos
-              <a href="/terms" className="hover:text-white hover:underline">
+              <span
+                onClick={() => setOpen(!open)}
+                className="cursor-pointer hover:text-white hover:underline"
+              >
                 {" "}
                 Termos de Serviço{" "}
-              </a>
+              </span>
               e
-              <a href="/politics" className="hover:text-white hover:underline">
+              <span
+                onClick={() => setOpen(!open)}
+                className="cursor-pointer hover:text-white hover:underline"
+              >
                 {" "}
                 Política de Privacidade
-              </a>
+              </span>
               .
             </p>
           </motion.div>

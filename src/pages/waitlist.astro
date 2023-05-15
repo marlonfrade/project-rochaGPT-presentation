@@ -45,10 +45,88 @@ const makeTitle = title
   </head>
 
   <body class="scroll-smooth">
-    <main class="wrapper min-h-screen bg-gray-800">
-      <section class="w-full">
+    <main class="flex min-h-screen items-center bg-gray-800">
+      <section class="h-full w-full">
         <WaitListForm client:load />
       </section>
     </main>
   </body>
+  <style is:global>
+    #fire-button {
+      display: flex;
+      justify-content: center;
+      rotate: -40deg;
+      padding: 0 15px 0 15px;
+      font-size: 17px;
+      font-weight: 700;
+      text-shadow: 1px 1px 2.3px rgba(255, 255, 255, 0.8);
+      position: relative;
+      width: 32px;
+      height: 20px;
+      margin: 4em 0;
+      border-radius: 100% 9% 9% 100% / 0% 100% 100% 0%;
+      border: none;
+      background-image: linear-gradient(
+        180deg,
+        #8bc673,
+        #7e6f39,
+        #c1c093,
+        #e7ffbf,
+        #7e6e3e,
+        #5a4219,
+        #c4d197,
+        #9e924e,
+        #8e7f55
+      );
+    }
+
+    #fire-button::before {
+      content: "";
+      height: 24px;
+      width: 10px;
+      position: absolute;
+      top: -4.7%;
+      left: -5.9%;
+      border-radius: 100% 31% 28% 100% / 0% 100% 100% 0%;
+      background-image: linear-gradient(
+        180deg,
+        #b3c373,
+        #688c2b,
+        #8aad53,
+        #e3f6b7,
+        #687a2f,
+        #4e4818,
+        #a9bc59,
+        #7e8d35,
+        #667a41
+      );
+    }
+
+    .bullet {
+      height: 20px;
+      width: 30px;
+      position: absolute;
+      top: 2.1%;
+      left: 95%;
+      border-radius: 10% 100% 100% 10% / 10% 50% 50% 10%;
+      background-image: linear-gradient(
+        180deg,
+        #b3c373,
+        #688c2b,
+        #8aad53,
+        #e3f6b7,
+        #687a2f,
+        #4e4818,
+        #a9bc59,
+        #7e8d35,
+        #667a41
+      );
+      z-index: -1;
+    }
+
+    #fire-button:active .bullet {
+      left: 115%;
+      transition: all 0.2s;
+    }
+  </style>
 </html>

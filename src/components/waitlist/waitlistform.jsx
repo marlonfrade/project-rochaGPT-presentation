@@ -3,9 +3,10 @@ import StepOneForm from "./steponeform.jsx";
 import StepTwoForm from "./steptwoform.jsx";
 import StepThreeForm from "./stepthreeform.jsx";
 import StepFourForm from "./stepfourform.jsx";
+import StepFiveForm from "./stepfiveform.jsx";
 
 const WaitListForm = () => {
-  const [activeStep, setActiveStep] = useState(4);
+  const [activeStep, setActiveStep] = useState(1);
   const [formData, setFormData] = useState({
     stepOne: {
       name: "",
@@ -45,27 +46,29 @@ const WaitListForm = () => {
             setActiveStep={setActiveStep}
           />
         );
-      break;
+        break;
       case 4:
         return (
-                  <StepFourForm
-            data={formData.stepTwo}
+          <StepFourForm
+            data={formData.stepForm}
             activeStep={activeStep}
             setActiveStep={setActiveStep}
           />
-        )
+        );
 
       default:
-        return <h1 className="text-6xl text-white">Inicio ou Fim?</h1>;
+        return (
+          <StepFiveForm
+            data={formData}
+            activeStep={activeStep}
+            setActiveStep={setActiveStep}
+          />
+        );
         break;
     }
   };
 
-  return (
-    <div className="flex min-h-screen items-center justify-center">
-      {getActiveStep()}
-    </div>
-  );
+  return <div>{getActiveStep()}</div>;
 };
 
 export default WaitListForm;
