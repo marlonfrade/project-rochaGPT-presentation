@@ -1,10 +1,21 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import Icon from "./steptwoicon";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/bootstrap.css";
 
 const StepTwoForm = ({ data, activeStep, setActiveStep }) => {
   if (activeStep !== 2) {
     return null;
   }
+  const [phone, setPhone] = useState("");
+
+  const handleSubmit = () => {
+    if (!inputPhone.length) {
+      console.log(inputPhone);
+    }
+  };
+
   return (
     <section>
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 md:px-12 lg:px-24 lg:py-24">
@@ -43,7 +54,7 @@ const StepTwoForm = ({ data, activeStep, setActiveStep }) => {
               transition={{ type: "spring", delay: 0.8 }}
               className="mb-8 text-4xl font-bold leading-none tracking-tighter text-white lg:text-6xl"
             >
-              Queremos te conhecer melhor !
+              Queremos te conhecer melhor!
             </motion.h1>
             <motion.p
               initial={{ x: 200, opacity: 0 }}
@@ -55,24 +66,37 @@ const StepTwoForm = ({ data, activeStep, setActiveStep }) => {
               entrega para nossos clientes. É bem rapidinho!
             </motion.p>
             <motion.div
+              initial={{ x: 200, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ type: "spring", delay: 0.8 }}
+              className=""
+            >
+              <h2 className="mb-2 text-xl font-bold leading-none tracking-tighter text-gray-200">
+                Digite seu telefone
+              </h2>
+              <PhoneInput
+                country={"br"}
+                value={this.phone}
+                onChange={(phone) => this.setState({ phone })}
+              />
+            </motion.div>
+            <motion.div
               initial={{ y: 300, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{type: "spring"}}
+              transition={{ type: "tween" }}
               className="mt-0 max-w-7xl sm:flex lg:mt-6"
             >
               <div className="mt-3 rounded-lg sm:mt-0">
                 <button
-                  onClick={() => {
-                    setActiveStep(3);
-                  }}
-                  className="block transform items-center rounded-xl bg-primary px-5 py-4 text-center text-base font-medium text-white transition duration-500 ease-in-out hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2"
+                  onClick={handleSubmit}
+                  className="block transform items-center rounded-xl bg-green-500 px-5 py-4 text-center text-base font-medium text-white transition duration-500 ease-in-out hover:bg-green-400 focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2"
                 >
                   Desejo Responder
                 </button>
               </div>
               <div className="mt-3 rounded-lg sm:ml-3 sm:mt-0">
                 <button className="block transform items-center rounded-xl border-2 border-white px-5 py-3.5 text-center text-base font-medium text-red-500 shadow-md transition duration-500 ease-in-out hover:border-red-500 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2">
-                  Não Desejo Informar
+                  Não Desejo Responder
                 </button>
               </div>
             </motion.div>

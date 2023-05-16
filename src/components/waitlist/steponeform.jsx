@@ -1,15 +1,63 @@
 import { useRef, useState } from "react";
-import { motion } from "framer-motion";
+import { animate, motion } from "framer-motion";
 import Terms from "./modalterms";
+
+const submitedVariants = {
+  firstDot: {
+    initial: {
+      y: -10,
+    },
+    animate: {
+      y: 0,
+      transition: {
+        duration: 0.5,
+        type: "tween",
+        ease: "easeInOut",
+        repeat: "loop",
+      },
+    },
+  },
+  secondDot: {
+    initial: {
+      y: -10,
+    },
+    animate: {
+      y: 0,
+      transition: {
+        delay: 0.1,
+        duration: 0.5,
+        type: "tween",
+        ease: "easeInOut",
+        repeat: "loop",
+      },
+    },
+  },
+  thirdDot: {
+    initial: {
+      y: -10,
+    },
+    animate: {
+      y: 0,
+      transition: {
+        delay: 0.2,
+        duration: 0.5,
+        type: "tween",
+        ease: "easeInOut",
+        repeat: "loop",
+      },
+    },
+  },
+};
 
 const StepOneForm = ({ data, activeStep, setActiveStep }) => {
   if (activeStep !== 1) {
     return null;
   }
   const [open, setOpen] = useState(false);
+  const [isTerms, setIsTerms] = useState(false);
+  const [isSubmited, setIsSubmited] = useState(false);
   const nameInput = useRef(null);
   const emailInput = useRef(null);
-  const submitBtn = useRef(null);
 
   const handleInputName = (e) => {
     nameInput.current.value = e.target.value;
@@ -21,22 +69,25 @@ const StepOneForm = ({ data, activeStep, setActiveStep }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("submited");
-    submitBtn.current.innerText = "enviando ...";
+    setIsSubmited(true);
 
     setTimeout(() => {
+      setIsSubmited(false);
       setActiveStep(2);
-      submitBtn.current.innerText = "enviar";
     }, 3000);
   };
 
   return (
     <div className="relative mx-auto flex h-full min-h-screen w-full text-left">
-      <Terms open={open} setOpen={setOpen} />
-      <a href="/pricing">
+      {/* Modal Terms */}
+      <Terms open={open} setOpen={setOpen} isTerms={isTerms} />
+      {/* Close Button */}
+      <a
+        href="/pricing"
+        className="absolute right-0 top-0 z-10 m-3 h-6 w-6 cursor-pointer text-gray-400"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="absolute right-0 top-0 m-3 h-6 w-6 cursor-pointer text-gray-400"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -49,6 +100,7 @@ const StepOneForm = ({ data, activeStep, setActiveStep }) => {
           />
         </svg>
       </a>
+      {/* Main Content */}
       <div className="relative mx-auto inline-flex items-center align-middle">
         <div className="px-4 pb-12 text-center">
           <motion.h1
@@ -113,26 +165,51 @@ const StepOneForm = ({ data, activeStep, setActiveStep }) => {
                 />
               </div>
             </motion.div>
-            <div className="revue-form-actions mt-4 sm:mt-0 lg:ml-3">
-              <motion.button
-                initial={{ x: 200, opacity: 0 }}
-                whileInView={{
-                  x: 0,
-                  opacity: 1,
-                  transition: {
-                    type: "spring",
-                    delay: 0.2,
-                  },
-                }}
-                type="submit"
-                ref={submitBtn}
-                value="Subscribe"
-                name="member[subscribe]"
-                id="member_submit"
-                className="block w-full rounded-lg border border-transparent bg-primary px-5 py-3 text-base font-medium text-white shadow transition-colors ease-in-out hover:bg-green-400 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300 sm:px-10"
-              >
-                Prosseguir
-              </motion.button>
+            <div className="revue-form-actions mt-4 flex items-center justify-center sm:mt-0 lg:ml-3">
+              {isSubmited ? (
+                <div className="ml-7 flex justify-center space-x-2 py-3 sm:px-10">
+                  <motion.div
+                    variants={submitedVariants.firstDot}
+                    initial="initial"
+                    animate="animate"
+                    exit="exit"
+                    className="h-3 w-3 rounded-full bg-gray-500"
+                  ></motion.div>
+                  <motion.div
+                    variants={submitedVariants.secondDot}
+                    initial="initial"
+                    animate="animate"
+                    exit="exit"
+                    className="h-3 w-3 rounded-full bg-gray-500"
+                  ></motion.div>
+                  <motion.div
+                    variants={submitedVariants.thirdDot}
+                    initial="initial"
+                    animate="animate"
+                    exit="exit"
+                    className="h-3 w-3 rounded-full bg-gray-500"
+                  ></motion.div>
+                </div>
+              ) : (
+                <motion.button
+                  initial={{ x: 200, opacity: 0 }}
+                  whileInView={{
+                    x: 0,
+                    opacity: 1,
+                    transition: {
+                      type: "spring",
+                      delay: 0.2,
+                    },
+                  }}
+                  type="submit"
+                  value="Subscribe"
+                  name="member[subscribe]"
+                  id="member_submit"
+                  className="block w-full rounded-lg border border-transparent bg-green-500 px-5 py-3 text-base font-medium text-white shadow transition-colors ease-in-out hover:bg-green-400 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300 sm:px-10"
+                >
+                  Prosseguir
+                </motion.button>
+              )}
             </div>
           </form>
           <motion.div
@@ -150,7 +227,10 @@ const StepOneForm = ({ data, activeStep, setActiveStep }) => {
             <p className="mt-3 text-xs text-gray-500">
               Ao se inscrever, você concorda com nossos
               <span
-                onClick={() => setOpen(!open)}
+                onClick={() => {
+                  setOpen(!open);
+                  setIsTerms(true);
+                }}
                 className="cursor-pointer hover:text-white hover:underline"
               >
                 {" "}
@@ -158,7 +238,10 @@ const StepOneForm = ({ data, activeStep, setActiveStep }) => {
               </span>
               e
               <span
-                onClick={() => setOpen(!open)}
+                onClick={() => {
+                  setOpen(!open);
+                  setIsTerms(false);
+                }}
                 className="cursor-pointer hover:text-white hover:underline"
               >
                 {" "}

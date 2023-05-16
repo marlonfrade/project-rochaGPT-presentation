@@ -1,12 +1,14 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import StepOneForm from "./steponeform.jsx";
 import StepTwoForm from "./steptwoform.jsx";
 import StepThreeForm from "./stepthreeform.jsx";
 import StepFourForm from "./stepfourform.jsx";
 import StepFiveForm from "./stepfiveform.jsx";
+import Loading from "./loading.jsx";
 
 const WaitListForm = () => {
-  const [activeStep, setActiveStep] = useState(1);
+  const [activeStep, setActiveStep] = useState(2);
+  const [isLoading, setIsLoading] = useState(true);
   const [formData, setFormData] = useState({
     stepOne: {
       name: "",
@@ -18,15 +20,28 @@ const WaitListForm = () => {
     stepThree: {},
   });
 
+  // useEffect(() => {
+  //   setIsLoading(true);
+  //   setTimeout(() => {
+  //     setIsLoading(false);
+  //   }, 4500);
+  // }, [activeStep === 1]);
+
   const getActiveStep = () => {
     switch (activeStep) {
       case 1:
         return (
-          <StepOneForm
-            data={formData.stepOne}
-            activeStep={activeStep}
-            setActiveStep={setActiveStep}
-          />
+          <>
+            {!isLoading ? (
+              <Loading isLoading={isLoading} />
+            ) : (
+              <StepOneForm
+                data={formData.stepOne}
+                activeStep={activeStep}
+                setActiveStep={setActiveStep}
+              />
+            )}
+          </>
         );
         break;
       case 2:

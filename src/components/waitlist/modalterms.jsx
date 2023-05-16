@@ -1,7 +1,7 @@
 import { Fragment, useRef } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 
-export default function Terms({ open, setOpen }) {
+export default function Terms({ open, setOpen, isTerms }) {
   const cancelButtonRef = useRef(null);
   return (
     <Transition.Root show={open} as={Fragment}>
@@ -20,7 +20,12 @@ export default function Terms({ open, setOpen }) {
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
+          <div
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+            className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+          />
         </Transition.Child>
 
         <div className="fixed inset-0 z-10 overflow-y-auto">
@@ -37,7 +42,7 @@ export default function Terms({ open, setOpen }) {
               <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
                 <div className="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
                   <div className="sm:flex sm:items-start">
-                    <div className="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
+                    <div className="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-green-500 sm:mx-0 sm:h-10 sm:w-10">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
@@ -57,15 +62,101 @@ export default function Terms({ open, setOpen }) {
                         as="h3"
                         className="text-base font-semibold leading-6 text-gray-900"
                       >
-                        Deactivate account
+                        Termos de Serviço e Política de Privacidade
                       </Dialog.Title>
-                      <div className="mt-2">
-                        <p className="text-sm text-gray-500">
-                          Are you sure you want to deactivate your account? All
-                          of your data will be permanently removed. This action
-                          cannot be undone.
-                        </p>
-                      </div>
+                      {isTerms ? (
+                        <div className="mt-2">
+                          <span className="text-sm font-semibold leading-6 text-gray-500">
+                            Termos de Serviço:
+                          </span>
+                          <p className="mt-2 text-sm text-gray-500">
+                            <span className="font-semibold">
+                              Aceitação dos termos.
+                            </span>{" "}
+                            Ao se inscrever em nossa waitlist, você concorda em
+                            cumprir e estar vinculado aos seguintes termos de
+                            serviço.
+                          </p>
+                          <p className="mt-2 text-sm text-gray-500">
+                            <span className="font-semibold">
+                              Consentimento para contato.
+                            </span>{" "}
+                            Ao se inscrever em nossa waitlist, você nos concede
+                            permissão para entrar em contato com você por meio
+                            do email e telefone fornecidos, a fim de fornecer
+                            atualizações sobre nossos serviços e para fins de
+                            marketing.
+                          </p>
+                          <p className="mt-2 text-sm text-gray-500">
+                            <span className="font-semibold">
+                              Uso dos dados.
+                            </span>{" "}
+                            Os dados coletados durante o processo de inscrição
+                            em nossa waitlist, incluindo nome, email e telefone,
+                            serão usados exclusivamente para os fins de
+                            comunicação e marketing relacionados aos nossos
+                            serviços. Não compartilharemos esses dados com
+                            terceiros sem o seu consentimento.
+                          </p>
+                          <p className="mt-2 text-sm text-gray-500">
+                            <span className="font-semibold">
+                              Cancelamento da inscrição.
+                            </span>{" "}
+                            Você tem o direito de cancelar sua inscrição na
+                            waitlist a qualquer momento. Para isso, entre em
+                            contato conosco através dos canais de comunicação
+                            fornecidos no site.
+                          </p>
+                        </div>
+                      ) : (
+                        <div className="mt-4">
+                          <span className="text-sm font-semibold leading-6 text-gray-500">
+                            Política de Privacidade:
+                          </span>
+                          <p className="mt-2 text-sm text-gray-500">
+                            <span className="font-semibold">
+                              Informações coletadas.
+                            </span>{" "}
+                            Coletamos as seguintes informações durante o
+                            processo de inscrição na waitlist: nome, email e
+                            telefone. Essas informações são fornecidas por você
+                            voluntariamente.
+                          </p>
+                          <p className="mt-2 text-sm text-gray-500">
+                            <span className="font-semibold">
+                              Uso das informações.
+                            </span>{" "}
+                            As informações fornecidas serão usadas para entrar
+                            em contato com você e fornecer atualizações sobre
+                            nossos serviços. Além disso, podemos usar essas
+                            informações para fins de análise interna e melhoria
+                            de nossos serviços.
+                          </p>
+                          <p className="mt-2 text-sm text-gray-500">
+                            <span className="font-semibold">
+                              Compartilhamento de informações.
+                            </span>{" "}
+                            Não compartilharemos suas informações pessoais com
+                            terceiros, exceto quando necessário para cumprir os
+                            propósitos da waitlist ou quando exigido por lei.
+                          </p>
+                          <p className="mt-2 text-sm text-gray-500">
+                            <span className="font-semibold">Segurança.</span>{" "}
+                            Você Implementamos medidas de segurança adequadas
+                            para proteger as informações fornecidas contra
+                            acesso não autorizado ou uso indevido.
+                          </p>
+                          <p className="mt-2 text-sm text-gray-500">
+                            <span className="font-semibold">
+                              Retenção de informações .
+                            </span>{" "}
+                            Manteremos suas informações pessoais apenas pelo
+                            tempo necessário para cumprir os propósitos para os
+                            quais foram coletadas, a menos que uma retenção mais
+                            longa seja exigida ou permitida por lei.
+                          </p>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -75,15 +166,7 @@ export default function Terms({ open, setOpen }) {
                     className="inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto"
                     onClick={() => setOpen(false)}
                   >
-                    Deactivate
-                  </button>
-                  <button
-                    type="button"
-                    className="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
-                    onClick={() => setOpen(false)}
-                    ref={cancelButtonRef}
-                  >
-                    Cancel
+                    Fechar
                   </button>
                 </div>
               </Dialog.Panel>

@@ -3,7 +3,11 @@ import { delay, motion } from "framer-motion";
 function Icon() {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
-      <motion.g initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+      <motion.g
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ type: "spring" }}
+      >
         <motion.path
           initial={{ pathLength: 0 }}
           animate={{ pathLength: 1 }}
@@ -22,26 +26,31 @@ function Icon() {
         <motion.path
           initial={{ pathLength: 0 }}
           animate={{ pathLength: 1 }}
+          transition={{duration: 1.2}}
           d="M260 100.73L260 454.83"
         ></motion.path>
         <motion.path
           initial={{ pathLength: 0 }}
           animate={{ pathLength: 1 }}
+          transition={{duration: 1.2}}
           d="M260 54.37L260 93.42"
         ></motion.path>
         <motion.path
           initial={{ pathLength: 0 }}
           animate={{ pathLength: 1 }}
+          transition={{duration: 1.2}}
           d="M451.13 254.6L460.56 254.6"
         ></motion.path>
         <motion.path
           initial={{ pathLength: 0 }}
           animate={{ pathLength: 1 }}
+          transition={{duration: 1.2}}
           d="M185.21 254.6L443.1 254.6"
         ></motion.path>
         <motion.path
           initial={{ pathLength: 0 }}
           animate={{ pathLength: 1 }}
+          transition={{duration: 1.2}}
           d="M59.45 254.6L177.17 254.6"
         ></motion.path>
       </g>
