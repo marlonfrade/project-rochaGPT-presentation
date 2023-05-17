@@ -49,7 +49,7 @@ const submitedVariants = {
   },
 };
 
-const StepOneForm = ({ data, activeStep, setActiveStep }) => {
+const StepOneForm = ({ formData, setFormData, activeStep, setActiveStep }) => {
   if (activeStep !== 1) {
     return null;
   }
@@ -71,10 +71,21 @@ const StepOneForm = ({ data, activeStep, setActiveStep }) => {
     e.preventDefault();
     setIsSubmited(true);
 
+    if (!nameInput.current.value.length || !emailInput.current.value.length) {
+      setIsSubmited(false);
+      return;
+    }
+
+    setFormData({
+      ...formData,
+      name: nameInput.current.value,
+      email: emailInput.current.value,
+    });
+
     setTimeout(() => {
       setIsSubmited(false);
       setActiveStep(2);
-    }, 3000);
+    }, 2000);
   };
 
   return (
@@ -91,11 +102,11 @@ const StepOneForm = ({ data, activeStep, setActiveStep }) => {
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
-          stroke-width="2"
+          strokeWidth="2"
         >
           <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinecap="round"
+            strokeLinejoin="round"
             d="M6 18L18 6M6 6l12 12"
           />
         </svg>

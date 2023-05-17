@@ -10,33 +10,29 @@ const WaitListForm = () => {
   const [activeStep, setActiveStep] = useState(2);
   const [isLoading, setIsLoading] = useState(true);
   const [formData, setFormData] = useState({
-    stepOne: {
-      name: "",
-      email: "",
-    },
-    stepTwo: {
-      isUserAgreed: null,
-    },
-    stepThree: {},
+    name: "",
+    email: "",
+    phone: "",
   });
 
-  // useEffect(() => {
-  //   setIsLoading(true);
-  //   setTimeout(() => {
-  //     setIsLoading(false);
-  //   }, 4500);
-  // }, [activeStep === 1]);
+  useEffect(() => {
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 4500);
+  }, [activeStep === 1]);
 
   const getActiveStep = () => {
     switch (activeStep) {
       case 1:
         return (
           <>
-            {!isLoading ? (
+            {isLoading ? (
               <Loading isLoading={isLoading} />
             ) : (
               <StepOneForm
-                data={formData.stepOne}
+                data={formData}
+                setFormData={setFormData}
                 activeStep={activeStep}
                 setActiveStep={setActiveStep}
               />
@@ -47,7 +43,7 @@ const WaitListForm = () => {
       case 2:
         return (
           <StepTwoForm
-            data={formData.stepTwo}
+            data={formData}
             activeStep={activeStep}
             setActiveStep={setActiveStep}
           />
@@ -56,7 +52,7 @@ const WaitListForm = () => {
       case 3:
         return (
           <StepThreeForm
-            data={formData.stepThree}
+            data={formData}
             activeStep={activeStep}
             setActiveStep={setActiveStep}
           />
@@ -65,7 +61,7 @@ const WaitListForm = () => {
       case 4:
         return (
           <StepFourForm
-            data={formData.stepForm}
+            data={formData}
             activeStep={activeStep}
             setActiveStep={setActiveStep}
           />

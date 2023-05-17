@@ -11,9 +11,7 @@ const StepTwoForm = ({ data, activeStep, setActiveStep }) => {
   const [phone, setPhone] = useState("");
 
   const handleSubmit = () => {
-    if (!inputPhone.length) {
-      console.log(inputPhone);
-    }
+    console.log(phone);
   };
 
   return (
@@ -54,7 +52,7 @@ const StepTwoForm = ({ data, activeStep, setActiveStep }) => {
               transition={{ type: "spring", delay: 0.8 }}
               className="mb-8 text-4xl font-bold leading-none tracking-tighter text-white lg:text-6xl"
             >
-              Queremos te conhecer melhor!
+              👋{data.name}, Queremos te conhecer melhor!
             </motion.h1>
             <motion.p
               initial={{ x: 200, opacity: 0 }}
@@ -76,8 +74,10 @@ const StepTwoForm = ({ data, activeStep, setActiveStep }) => {
               </h2>
               <PhoneInput
                 country={"br"}
-                value={this.phone}
-                onChange={(phone) => this.setState({ phone })}
+                value={phone}
+                onChange={(e) => {
+                  console.log(e.target.value);
+                }}
               />
             </motion.div>
             <motion.div

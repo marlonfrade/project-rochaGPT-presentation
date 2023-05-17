@@ -4,16 +4,16 @@ const Loading = ({ isLoading }) => {
   }
 
   return (
-    <div class="spinnerContainer">
-      <div class="spinner"></div>
-      <div class="loader">
+    <div className="spinnerContainer">
+      <div className="spinner"></div>
+      <div className="loader">
         <p>Carregando</p>
-        <div class="words">
-          <span class="word"></span>
-          <span class="word">uma IA</span>
-          <span class="word">no seu</span>
-          <span class="word">WhatsApp</span>
-          <span class="word">RochaGPT,</span>
+        <div className="words">
+          <span className="word"></span>
+          <span className="word">uma IA</span>
+          <span className="word">no seu</span>
+          <span className="word">WhatsApp</span>
+          <span className="word">RochaGPT,</span>
         </div>
       </div>
     </div>
