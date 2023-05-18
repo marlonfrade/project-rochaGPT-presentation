@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { animate, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import Terms from "./modalterms";
 
 const submitedVariants = {
@@ -147,7 +147,7 @@ const StepOneForm = ({ formData, setFormData, activeStep, setActiveStep }) => {
               }}
               className="space-y 4 divide-y lg:flex lg:divide-x lg:divide-y-0"
             >
-              <div className="revue-form-group min-w-0 flex-1">
+              <div className=" min-w-0 flex-1">
                 <label htmlFor="name" className="sr-only">
                   Name
                 </label>
@@ -161,7 +161,7 @@ const StepOneForm = ({ formData, setFormData, activeStep, setActiveStep }) => {
                   required
                 />
               </div>
-              <div className="revue-form-group min-w-0 flex-1">
+              <div className="min-w-0 flex-1">
                 <label htmlFor="email" className="sr-only">
                   Email address
                 </label>
@@ -176,7 +176,7 @@ const StepOneForm = ({ formData, setFormData, activeStep, setActiveStep }) => {
                 />
               </div>
             </motion.div>
-            <div className="revue-form-actions mt-4 flex items-center justify-center sm:mt-0 lg:ml-3">
+            <div className=" mt-4 flex items-center justify-center sm:mt-0 lg:ml-3">
               {isSubmited ? (
                 <div className="ml-7 flex justify-center space-x-2 py-3 sm:px-10">
                   <motion.div
@@ -213,9 +213,6 @@ const StepOneForm = ({ formData, setFormData, activeStep, setActiveStep }) => {
                     },
                   }}
                   type="submit"
-                  value="Subscribe"
-                  name="member[subscribe]"
-                  id="member_submit"
                   className="block w-full rounded-lg border border-transparent bg-green-500 px-5 py-3 text-base font-medium text-white shadow transition-colors ease-in-out hover:bg-green-400 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300 sm:px-10"
                 >
                   Prosseguir

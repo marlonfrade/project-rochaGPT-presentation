@@ -1,17 +1,60 @@
-import { useState } from "react";
+import { useRef } from "react";
 import { motion } from "framer-motion";
-import Icon from "./steptwoicon";
-import PhoneInput from "react-phone-input-2";
-import "react-phone-input-2/lib/bootstrap.css";
+import { addDoc, collection } from "firebase/firestore";
+import { db } from "../../firebase-config";
 
-const StepTwoForm = ({ data, activeStep, setActiveStep }) => {
+import Icon from "./steptwoicon";
+
+const StepTwoForm = ({ data, setFormData, activeStep, setActiveStep }) => {
   if (activeStep !== 2) {
     return null;
   }
-  const [phone, setPhone] = useState("");
+  const date = new Date();
+  const usersCollectionRef = collection(db, "users");
+  const phoneRef = useRef(null);
+  const helperText = useRef(null);
 
-  const handleSubmit = () => {
-    console.log(phone);
+  const handlePhoneInput = (e) => {
+    const input = phoneRef.current.value;
+    const formattedNumber = input
+      .replace(/\D/g, "")
+      .replace(/^(\d{2})(\d{5})(\d{4}).*/, "($1) $2-$3");
+    // set brazilian format phone number
+    phoneRef.current.value = formattedNumber;
+  };
+
+  const handleSubmit = async (opt) => {
+    const isUserAgreed = opt;
+    if (phoneRef.current.value.length !== 15) {
+      helperText.current.innerText = "verifique o telefone digitado.";
+      phoneRef.current.style.borderColor = "red";
+      return;
+    }
+    // handle data
+    setFormData({
+      ...data,
+      createDate: date,
+      phone: phoneRef.current.value,
+      isUserAgreed: isUserAgreed,
+    });
+    helperText.current.innerText = "";
+
+    // redirect based on user option
+    if (opt) {
+      setActiveStep(3);
+    } else {
+      const newData = {
+        ...data,
+        createDate: date,
+        phone: phoneRef.current.value,
+        isUserAgreed: isUserAgreed,
+      };
+      await addDoc(usersCollectionRef, newData).then((result) => {
+        console.log(result);
+        setActiveStep(5);
+      });
+      setActiveStep(5);
+    }
   };
 
   return (
@@ -52,50 +95,84 @@ const StepTwoForm = ({ data, activeStep, setActiveStep }) => {
               transition={{ type: "spring", delay: 0.8 }}
               className="mb-8 text-4xl font-bold leading-none tracking-tighter text-white lg:text-6xl"
             >
-              👋{data.name}, Queremos te conhecer melhor!
+              👋 {data.name}, Queremos te conhecer melhor!
             </motion.h1>
             <motion.p
               initial={{ x: 200, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               transition={{ type: "spring", delay: 0.8 }}
-              className="mb-8 text-left text-base leading-relaxed text-gray-500"
+              className="mb-4 text-left text-base leading-relaxed text-gray-500"
             >
               Respondendo apenas 3 perguntas, podemos melhorar ainda mais nossa
               entrega para nossos clientes. É bem rapidinho!
             </motion.p>
-            <motion.div
-              initial={{ x: 200, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ type: "spring", delay: 0.8 }}
-              className=""
+            <motion.form
+              initial={{ scale: 0, opacity: 0 }}
+              animate={{
+                scale: 1,
+                opacity: 1,
+                transition: { delay: 0.1, type: "tween" },
+              }}
+              id=""
+              name=""
+              className="border2 mt-4 w-full transform rounded-xl bg-gray-50 p-2 transition duration-500 ease-in-out md:mx-auto"
             >
-              <h2 className="mb-2 text-xl font-bold leading-none tracking-tighter text-gray-200">
-                Digite seu telefone
-              </h2>
-              <PhoneInput
-                country={"br"}
-                value={phone}
-                onChange={(e) => {
-                  console.log(e.target.value);
+              <motion.div
+                initial={{ x: 200, opacity: 0 }}
+                whileInView={{
+                  x: 0,
+                  opacity: 1,
+                  transition: {
+                    type: "tween",
+                    delay: 0.8,
+                  },
                 }}
-              />
-            </motion.div>
+                className=""
+              >
+                <div className="min-w-0 flex-1">
+                  <label htmlFor="name" className="sr-only">
+                    Phone
+                  </label>
+                  <input
+                    id="name"
+                    type="text"
+                    className="block w-full transform rounded-md border border-transparent bg-transparent px-5 py-3 text-base text-neutral-600 placeholder-gray-300 transition duration-500 ease-in-out focus:border-transparent focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300"
+                    placeholder="Preencha seu telefone com DDD"
+                    required
+                    ref={phoneRef}
+                    onChange={handlePhoneInput}
+                  />
+                </div>
+              </motion.div>
+            </motion.form>
+            <p
+              ref={helperText}
+              className="m-0 text-left text-sm leading-relaxed text-red-500"
+            ></p>
+
             <motion.div
               initial={{ y: 300, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ type: "tween" }}
-              className="mt-0 max-w-7xl sm:flex lg:mt-6"
+              className="mt-4 flex w-full justify-start space-x-6 lg:mt-6"
             >
-              <div className="mt-3 rounded-lg sm:mt-0">
+              <div className="mt-4 rounded-lg sm:mt-0">
                 <button
-                  onClick={handleSubmit}
+                  onClick={() => {
+                    handleSubmit(true);
+                  }}
                   className="block transform items-center rounded-xl bg-green-500 px-5 py-4 text-center text-base font-medium text-white transition duration-500 ease-in-out hover:bg-green-400 focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2"
                 >
                   Desejo Responder
                 </button>
               </div>
               <div className="mt-3 rounded-lg sm:ml-3 sm:mt-0">
-                <button className="block transform items-center rounded-xl border-2 border-white px-5 py-3.5 text-center text-base font-medium text-red-500 shadow-md transition duration-500 ease-in-out hover:border-red-500 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2">
+                <button
+                  onClick={() => {
+                    handleSubmit(false);
+                  }}
+                  className="block transform items-center rounded-xl border-2 border-white px-5 py-3.5 text-center text-base font-medium text-red-500 shadow-md transition duration-500 ease-in-out hover:border-red-500 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+                >
                   Não Desejo Responder
                 </button>
               </div>

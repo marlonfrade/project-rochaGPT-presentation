@@ -1,53 +1,79 @@
 import Icon from "./stepthreeicon";
+import { motion } from "framer-motion";
 
-const StepThreeForm = ({ data, activeStep, setActiveStep }) => {
+const StepThreeForm = ({ data, setFormData, activeStep, setActiveStep }) => {
   if (activeStep !== 3) {
     return null;
   }
   const handleClick = (option) => {
-    // switch (key) {
-    //     case value:
-
-    //         break;
-
-    //     default:
-    //         break;
-    // }
+    setFormData({
+      ...data,
+      howUserReachRochaGPT: option,
+    });
     setActiveStep(4);
   };
   return (
     <section>
-      <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 md:px-12 lg:px-24 lg:py-24">
-        <div class="mx-auto flex max-w-7xl flex-wrap items-center">
-          <div class="w-full rounded-xl lg:w-1/2 lg:max-w-lg">
+      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 md:px-12 lg:px-24 lg:py-24">
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center">
+          <div className="w-full rounded-xl lg:w-1/2 lg:max-w-lg">
             <div>
-              <div class="relative w-full max-w-lg">
-                <div class="animate-blob absolute -left-4 top-0 h-72 w-72 rounded-full bg-violet-300 opacity-70 mix-blend-multiply blur-xl filter"></div>
+              <div className="relative w-full max-w-lg">
+                <div className="animate-blob absolute -left-4 top-0 h-72 w-72 rounded-full bg-violet-300 opacity-70 mix-blend-multiply blur-xl filter"></div>
 
-                <div class="animate-blob animation-delay-4000 absolute -bottom-24 right-20 h-72 w-72 rounded-full bg-fuchsia-300 opacity-70 mix-blend-multiply blur-xl filter"></div>
-                <div class="relative">
+                <div className="animate-blob animation-delay-4000 absolute -bottom-24 right-20 h-72 w-72 rounded-full bg-fuchsia-300 opacity-70 mix-blend-multiply blur-xl filter"></div>
+                <div className="relative">
                   <Icon />
                 </div>
               </div>
             </div>
           </div>
-          <div class="mb-16 mt-12 flex flex-col items-start text-left md:mb-0 lg:w-1/2 lg:flex-grow lg:pl-6 xl:mt-0 xl:pl-24">
-            <span class="mb-8 text-xs font-bold uppercase tracking-widest text-primary">
+          <div className="mb-16 mt-12 flex flex-col items-start text-left md:mb-0 lg:w-1/2 lg:flex-grow lg:pl-6 xl:mt-0 xl:pl-24">
+            <motion.span
+              initial={{ opacity: 0, scale: 0 }}
+              whileInView={{
+                opacity: 1,
+                scale: 1,
+                transition: {
+                  type: "spring",
+                  delay: 0.2,
+                },
+              }}
+              className="mb-8 text-xs font-bold uppercase tracking-widest text-primary"
+            >
               {" "}
               RochaGPT Social{" "}
-            </span>
-            <h1 class="mb-8 text-4xl font-bold leading-none tracking-tighter text-white lg:text-6xl">
-              Como você chegou até o RochaGPT ?
-            </h1>
-            <p class="mb-8 text-left text-base leading-relaxed text-gray-500">
+            </motion.span>
+            <motion.h1
+              initial={{ x: 200, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ type: "spring", delay: 0.8 }}
+              className="mb-8 text-4xl font-bold leading-none tracking-tighter text-white lg:text-6xl"
+            >
+              {data.name}, como você chegou até o RochaGPT ?
+            </motion.h1>
+            <motion.p
+              initial={{ x: 200, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ type: "spring", delay: 0.8 }}
+              className="mb-8 text-left text-base leading-relaxed text-gray-500"
+            >
               Queremos melhorar nosso alcance, e você pode nos ajudar escolhendo
               a mídia social que te trouxe até o RochaGPT. Escolha a mídia
               social que mais se aproxima da sua escolha.
-            </p>
-            <div class="-mx-4 mt-2 flex w-full flex-wrap text-left">
-              <div class="mt-4 w-1/5 p-4 ">
-                <svg
-                  onClick={handleClick}
+            </motion.p>
+            <div className="-mx-4 mt-2 flex w-full flex-wrap text-left">
+              <motion.div
+                initial={{ y: 300, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ type: "tween" }}
+                className="mt-4 w-1/5 p-4 "
+              >
+                <motion.svg
+                  whileHover={{ scale: 1.2 }}
+                  onClick={() => {
+                    handleClick("Google");
+                  }}
                   className="cursor-pointer"
                   xmlns="http://www.w3.org/2000/svg"
                   width="48"
@@ -70,11 +96,19 @@ const StepThreeForm = ({ data, activeStep, setActiveStep }) => {
                     fill="#EB4335"
                     d="M130.55 50.479c24.514 0 41.05 10.589 50.479 19.438l36.844-35.974C195.245 12.91 165.798 0 130.55 0C79.49 0 35.393 29.301 13.925 71.947l42.211 32.783c10.59-31.477 39.891-54.251 74.414-54.251"
                   />
-                </svg>
-              </div>
-              <div class="mt-4 w-1/5 p-4 ">
-                <svg
-                  onClick={handleClick}
+                </motion.svg>
+              </motion.div>
+              <motion.div
+                initial={{ y: 300, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ type: "tween", delay: 0.2 }}
+                className="mt-4 w-1/5 p-4 "
+              >
+                <motion.svg
+                  whileHover={{ scale: 1.2 }}
+                  onClick={() => {
+                    handleClick("WhatsApp");
+                  }}
                   className="cursor-pointer"
                   xmlns="http://www.w3.org/2000/svg"
                   width="48"
@@ -89,8 +123,8 @@ const StepThreeForm = ({ data, activeStep, setActiveStep }) => {
                       y1="100%"
                       y2="0%"
                     >
-                      <stop offset="0%" stop-color="#1FAF38" />
-                      <stop offset="100%" stop-color="#60D669" />
+                      <stop offset="0%" stopColor="#1FAF38" />
+                      <stop offset="100%" stopColor="#60D669" />
                     </linearGradient>
                     <linearGradient
                       id="logosWhatsappIcon1"
@@ -99,8 +133,8 @@ const StepThreeForm = ({ data, activeStep, setActiveStep }) => {
                       y1="100%"
                       y2="0%"
                     >
-                      <stop offset="0%" stop-color="#F9F9F9" />
-                      <stop offset="100%" stop-color="#FFF" />
+                      <stop offset="0%" stopColor="#F9F9F9" />
+                      <stop offset="100%" stopColor="#FFF" />
                     </linearGradient>
                   </defs>
                   <path
@@ -115,11 +149,19 @@ const StepThreeForm = ({ data, activeStep, setActiveStep }) => {
                     fill="#FFF"
                     d="M96.678 74.148c-2.386-5.303-4.897-5.41-7.166-5.503c-1.858-.08-3.982-.074-6.104-.074c-2.124 0-5.575.799-8.492 3.984c-2.92 3.188-11.148 10.892-11.148 26.561c0 15.67 11.413 30.813 13.004 32.94c1.593 2.123 22.033 35.307 54.405 48.073c26.904 10.609 32.379 8.499 38.218 7.967c5.84-.53 18.844-7.702 21.497-15.139c2.655-7.436 2.655-13.81 1.859-15.142c-.796-1.327-2.92-2.124-6.105-3.716c-3.186-1.593-18.844-9.298-21.763-10.361c-2.92-1.062-5.043-1.592-7.167 1.597c-2.124 3.184-8.223 10.356-10.082 12.48c-1.857 2.129-3.716 2.394-6.9.801c-3.187-1.598-13.444-4.957-25.613-15.806c-9.468-8.442-15.86-18.867-17.718-22.056c-1.858-3.184-.199-4.91 1.398-6.497c1.431-1.427 3.186-3.719 4.78-5.578c1.588-1.86 2.118-3.187 3.18-5.311c1.063-2.126.531-3.986-.264-5.579c-.798-1.593-6.987-17.343-9.819-23.64"
                   />
-                </svg>
-              </div>
-              <div class="mt-4 w-1/5 p-4 ">
-                <svg
-                  onClick={handleClick}
+                </motion.svg>
+              </motion.div>
+              <motion.div
+                initial={{ y: 300, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ type: "tween", delay: 0.4 }}
+                className="mt-4 w-1/5 p-4 "
+              >
+                <motion.svg
+                  whileHover={{ scale: 1.2 }}
+                  onClick={() => {
+                    handleClick("Instagram");
+                  }}
                   className="cursor-pointer"
                   xmlns="http://www.w3.org/2000/svg"
                   width="48"
@@ -152,10 +194,10 @@ const StepThreeForm = ({ data, activeStep, setActiveStep }) => {
                         gradientTransform="matrix(0 -253.715 235.975 0 68 275.717)"
                         gradientUnits="userSpaceOnUse"
                       >
-                        <stop stop-color="#FD5" />
-                        <stop offset=".1" stop-color="#FD5" />
-                        <stop offset=".5" stop-color="#FF543E" />
-                        <stop offset="1" stop-color="#C837AB" />
+                        <stop stopColor="#FD5" />
+                        <stop offset=".1" stopColor="#FD5" />
+                        <stop offset=".5" stopColor="#FF543E" />
+                        <stop offset="1" stopColor="#C837AB" />
                       </radialGradient>
                       <radialGradient
                         id="skillIconsInstagram1"
@@ -165,17 +207,25 @@ const StepThreeForm = ({ data, activeStep, setActiveStep }) => {
                         gradientTransform="matrix(22.25952 111.2061 -458.39518 91.75449 -42.881 18.441)"
                         gradientUnits="userSpaceOnUse"
                       >
-                        <stop stop-color="#3771C8" />
-                        <stop offset=".128" stop-color="#3771C8" />
-                        <stop offset="1" stop-color="#60F" stop-opacity="0" />
+                        <stop stopColor="#3771C8" />
+                        <stop offset=".128" stopColor="#3771C8" />
+                        <stop offset="1" stopColor="#60F" stopOpacity="0" />
                       </radialGradient>
                     </defs>
                   </g>
-                </svg>
-              </div>
-              <div class="mt-4 w-1/5 p-4 ">
-                <svg
-                  onClick={handleClick}
+                </motion.svg>
+              </motion.div>
+              <motion.div
+                initial={{ y: 300, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ type: "tween", delay: 0.6 }}
+                className="mt-4 w-1/5 p-4 "
+              >
+                <motion.svg
+                  whileHover={{ scale: 1.2 }}
+                  onClick={() => {
+                    handleClick("Discord");
+                  }}
                   className="cursor-pointer"
                   xmlns="http://www.w3.org/2000/svg"
                   width="48"
@@ -184,7 +234,7 @@ const StepThreeForm = ({ data, activeStep, setActiveStep }) => {
                 >
                   <g fill="none">
                     <rect width="256" height="256" fill="#5865F2" rx="60" />
-                    <g clip-path="url(#skillIconsDiscord0)">
+                    <g clipPath="url(#skillIconsDiscord0)">
                       <path
                         fill="#fff"
                         d="M197.308 64.797a164.918 164.918 0 0 0-40.709-12.627a.618.618 0 0 0-.654.31c-1.758 3.126-3.706 7.206-5.069 10.412c-15.373-2.302-30.666-2.302-45.723 0c-1.364-3.278-3.382-7.286-5.148-10.412a.643.643 0 0 0-.655-.31a164.472 164.472 0 0 0-40.709 12.627a.583.583 0 0 0-.268.23c-25.928 38.736-33.03 76.52-29.546 113.836a.685.685 0 0 0 .26.468c17.106 12.563 33.677 20.19 49.94 25.245a.648.648 0 0 0 .702-.23c3.847-5.254 7.276-10.793 10.217-16.618a.633.633 0 0 0-.347-.881c-5.44-2.064-10.619-4.579-15.601-7.436a.642.642 0 0 1-.063-1.064a86.364 86.364 0 0 0 3.098-2.428a.618.618 0 0 1 .646-.088c32.732 14.944 68.167 14.944 100.512 0a.617.617 0 0 1 .655.08a79.613 79.613 0 0 0 3.106 2.436a.642.642 0 0 1-.055 1.064a102.622 102.622 0 0 1-15.609 7.428a.638.638 0 0 0-.339.889a133.075 133.075 0 0 0 10.208 16.61a.636.636 0 0 0 .702.238c16.342-5.055 32.913-12.682 50.02-25.245a.646.646 0 0 0 .26-.46c4.17-43.141-6.985-80.616-29.571-113.836a.506.506 0 0 0-.26-.238ZM94.834 156.142c-9.855 0-17.975-9.047-17.975-20.158s7.963-20.158 17.975-20.158c10.09 0 18.131 9.127 17.973 20.158c0 11.111-7.962 20.158-17.974 20.158Zm66.456 0c-9.855 0-17.974-9.047-17.974-20.158s7.962-20.158 17.974-20.158c10.09 0 18.131 9.127 17.974 20.158c0 11.111-7.884 20.158-17.974 20.158Z"
@@ -196,11 +246,19 @@ const StepThreeForm = ({ data, activeStep, setActiveStep }) => {
                       </clipPath>
                     </defs>
                   </g>
-                </svg>
-              </div>
-              <div class="mt-4 w-1/5 p-4 ">
-                <svg
-                  onClick={handleClick}
+                </motion.svg>
+              </motion.div>
+              <motion.div
+                initial={{ y: 300, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ type: "tween", delay: 0.8 }}
+                className="mt-4 w-1/5 p-4 "
+              >
+                <motion.svg
+                  whileHover={{ scale: 1.2 }}
+                  onClick={() => {
+                    handleClick("Twitter");
+                  }}
                   className="cursor-pointer"
                   xmlns="http://www.w3.org/2000/svg"
                   width="48"
@@ -215,8 +273,8 @@ const StepThreeForm = ({ data, activeStep, setActiveStep }) => {
                       d="M199.572 91.411c.11 1.587.11 3.174.11 4.776c0 48.797-37.148 105.075-105.075 105.075v-.03A104.54 104.54 0 0 1 38 184.677c2.918.351 5.85.526 8.79.533a74.154 74.154 0 0 0 45.864-15.839a36.976 36.976 0 0 1-34.5-25.645a36.811 36.811 0 0 0 16.672-.636c-17.228-3.481-29.623-18.618-29.623-36.198v-.468a36.705 36.705 0 0 0 16.76 4.622c-16.226-10.845-21.228-32.432-11.43-49.31a104.814 104.814 0 0 0 76.111 38.582a36.95 36.95 0 0 1 10.683-35.283c14.874-13.982 38.267-13.265 52.249 1.601a74.105 74.105 0 0 0 23.451-8.965a37.061 37.061 0 0 1-16.234 20.424A73.446 73.446 0 0 0 218 72.282a75.023 75.023 0 0 1-18.428 19.13Z"
                     />
                   </g>
-                </svg>
-              </div>
+                </motion.svg>
+              </motion.div>
             </div>
           </div>
         </div>

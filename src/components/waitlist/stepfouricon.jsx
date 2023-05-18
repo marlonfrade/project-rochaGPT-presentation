@@ -1,18 +1,78 @@
+import { motion } from "framer-motion";
+
+const svgVariants = {
+  background: {
+    initial: {
+      scale: 0,
+      opacity: 0,
+    },
+    animate: {
+      scale: 1,
+      opacity: 1,
+      transition: {
+        type: "tween",
+      },
+    },
+  },
+  iconLine: {
+    initial: {
+      pathLength: 0,
+    },
+    animate: {
+      pathLength: 1,
+      transition: {
+        delay: 0.5,
+        type: "tween",
+      },
+    },
+  },
+  iconCircle: {
+    initial: {
+      opacity: 0,
+      scale: 0,
+    },
+    animate: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        delay: 0.5,
+        type: "tween",
+      },
+    },
+  },
+  icon: {
+    initial: { opacity: 0 },
+    animate: {
+      opacity: 1,
+      transition: {
+        delay: 0.7,
+        type: "tween",
+      },
+    },
+  },
+};
+
 function Icon() {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+      {/* backgorund */}
       <g>
-        <path
+        <motion.path
+          variants={svgVariants.background}
+          initial="initial"
+          animate="animate"
+          exit="initial"
           fill="#92E3A9"
           d="M423.72 160.48s-16.87-67.66-119-110.33S111.22 47 90.39 97s1 77-12.9 119.7S-7.82 313.48 21 379.06s163.68 84.31 272.81 70.78S488.2 286.42 423.72 160.48z"
-        ></path>
-        <path
-          fill="#fff"
-          d="M423.72 160.48s-16.87-67.66-119-110.33S111.22 47 90.39 97s1 77-12.9 119.7S-7.82 313.48 21 379.06s163.68 84.31 272.81 70.78S488.2 286.42 423.72 160.48z"
-          opacity="0.7"
-        ></path>
+        ></motion.path>
       </g>
-      <g>
+      {/* phone */}
+      <motion.g
+        variants={svgVariants.iconCircle}
+        initial="initial"
+        animate="animate"
+        exit="initial"
+      >
         <path
           fill="#263238"
           stroke="#263238"
@@ -473,90 +533,138 @@ function Icon() {
           d="M377.88 298.93L405.17 298.93"
         ></path>
         <path
+          variants={svgVariants.iconLine}
+          initial="initial"
+          animate="animate"
+          exit="initial"
           fill="none"
           stroke="#263238"
           strokeLinecap="round"
           strokeLinejoin="round"
           d="M344.18 298.93L373.07 298.93"
         ></path>
-        <path
+        <motion.path
+          variants={svgVariants.iconLine}
+          initial="initial"
+          animate="animate"
+          exit="initial"
           fill="none"
           stroke="#263238"
           strokeLinecap="round"
           strokeLinejoin="round"
           d="M399.82 304.82L405.17 304.82"
-        ></path>
-        <path
+        ></motion.path>
+        <motion.path
+          variants={svgVariants.iconLine}
+          initial="initial"
+          animate="animate"
+          exit="initial"
           fill="none"
           stroke="#263238"
           strokeLinecap="round"
           strokeLinejoin="round"
           d="M369.86 304.82L395.54 304.82"
-        ></path>
-        <path
+        ></motion.path>
+        <motion.path
+          variants={svgVariants.iconLine}
+          initial="initial"
+          animate="animate"
+          exit="initial"
           fill="none"
           stroke="#263238"
           strokeLinecap="round"
           strokeLinejoin="round"
           d="M344.18 304.82L365.58 304.82"
-        ></path>
-        <path
+        ></motion.path>
+        <motion.path
+          variants={svgVariants.iconLine}
+          initial="initial"
+          animate="animate"
+          exit="initial"
           fill="none"
           stroke="#263238"
           strokeLinecap="round"
           strokeLinejoin="round"
           d="M386.44 309.63L405.17 309.63"
-        ></path>
-        <path
+        ></motion.path>
+        <motion.path
+          variants={svgVariants.iconLine}
+          initial="initial"
+          animate="animate"
+          exit="initial"
           fill="none"
           stroke="#263238"
           strokeLinecap="round"
           strokeLinejoin="round"
           d="M360.23 309.63L381.63 309.63"
-        ></path>
-        <path
+        ></motion.path>
+        <motion.path
+          variants={svgVariants.iconLine}
+          initial="initial"
+          animate="animate"
+          exit="initial"
           fill="none"
           stroke="#263238"
           strokeLinecap="round"
           strokeLinejoin="round"
           d="M344.18 309.63L356.48 309.63"
-        ></path>
-        <path
+        ></motion.path>
+        <motion.path
+          variants={svgVariants.iconLine}
+          initial="initial"
+          animate="animate"
+          exit="initial"
           fill="none"
           stroke="#263238"
           strokeLinecap="round"
           strokeLinejoin="round"
           d="M377.88 315.52L405.17 315.52"
-        ></path>
-        <path
+        ></motion.path>
+        <motion.path
+          variants={svgVariants.iconLine}
+          initial="initial"
+          animate="animate"
+          exit="initial"
           fill="none"
           stroke="#263238"
           strokeLinecap="round"
           strokeLinejoin="round"
           d="M344.18 315.52L373.07 315.52"
-        ></path>
-        <path
+        ></motion.path>
+        <motion.path
+          variants={svgVariants.iconLine}
+          initial="initial"
+          animate="animate"
+          exit="initial"
           fill="none"
           stroke="#263238"
           strokeLinecap="round"
           strokeLinejoin="round"
           d="M399.82 321.4L405.17 321.4"
-        ></path>
-        <path
+        ></motion.path>
+        <motion.path
+          variants={svgVariants.iconLine}
+          initial="initial"
+          animate="animate"
+          exit="initial"
           fill="none"
           stroke="#263238"
           strokeLinecap="round"
           strokeLinejoin="round"
           d="M369.86 321.4L395.54 321.4"
-        ></path>
-        <path
+        ></motion.path>
+        <motion.path
+          variants={svgVariants.iconLine}
+          initial="initial"
+          animate="animate"
+          exit="initial"
           fill="none"
           stroke="#263238"
           strokeLinecap="round"
           strokeLinejoin="round"
           d="M344.18 321.4L365.58 321.4"
-        ></path>
-        <circle
+        ></motion.path>
+        <motion.circle
           cx="439.1"
           cy="360.24"
           r="21.34"
@@ -564,76 +672,120 @@ function Icon() {
           stroke="#263238"
           strokeLinecap="round"
           strokeLinejoin="round"
-        ></circle>
-        <path
+        ></motion.circle>
+        <motion.path
+          variants={svgVariants.iconLine}
+          initial="initial"
+          animate="animate"
+          exit="initial"
           fill="#92E3A9"
           stroke="#263238"
           strokeLinecap="round"
           strokeLinejoin="round"
           d="M446.38 366.53a7.1 7.1 0 11-7.1-7.09 7.1 7.1 0 017.1 7.09z"
-        ></path>
-        <path
+        ></motion.path>
+        <motion.path
+          variants={svgVariants.iconLine}
+          initial="initial"
+          animate="animate"
+          exit="initial"
           fill="#fff"
           stroke="#263238"
           strokeLinecap="round"
           strokeLinejoin="round"
           d="M449.43 371.26a13 13 0 10-20.29 0z"
-        ></path>
-        <path
+        ></motion.path>
+        <motion.path
+          variants={svgVariants.iconLine}
+          initial="initial"
+          animate="animate"
+          exit="initial"
           fill="#92E3A9"
           stroke="#263238"
           strokeLinecap="round"
           strokeLinejoin="round"
           d="M444.35 367.58h-10.46a4.66 4.66 0 01-4.66-4.66h0a4.66 4.66 0 014.66-4.66h10.46a4.66 4.66 0 014.66 4.66h0a4.66 4.66 0 01-4.66 4.66z"
-        ></path>
-        <path
+        ></motion.path>
+        <motion.path
+          variants={svgVariants.iconLine}
+          initial="initial"
+          animate="animate"
+          exit="initial"
           fill="none"
           stroke="#263238"
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth="2"
           d="M431.37 362.54a3.16 3.16 0 015.89-.16M441.15 362.54a3.16 3.16 0 015.89-.16"
-        ></path>
-        <path
+        ></motion.path>
+        <motion.path
+          variants={svgVariants.iconLine}
+          initial="initial"
+          animate="animate"
+          exit="initial"
           fill="#fff"
           stroke="#263238"
           strokeLinecap="round"
           strokeLinejoin="round"
           d="M437.57 364.7a1.79 1.79 0 003.56 0z"
-        ></path>
-        <path
+        ></motion.path>
+        <motion.path
+          variants={svgVariants.iconLine}
+          initial="initial"
+          animate="animate"
+          exit="initial"
           fill="#263238"
           stroke="#263238"
           strokeLinecap="round"
           strokeLinejoin="round"
           d="M456.09 365.44h0a1.36 1.36 0 01-1.36-1.36V361a1.36 1.36 0 011.36-1.36h0a1.36 1.36 0 011.36 1.36v3.09a1.36 1.36 0 01-1.36 1.35zM422.11 365.44h0a1.36 1.36 0 01-1.36-1.36V361a1.36 1.36 0 011.36-1.36h0a1.36 1.36 0 011.36 1.36v3.09a1.36 1.36 0 01-1.36 1.35z"
-        ></path>
-        <path
+        ></motion.path>
+        <motion.path
+          variants={svgVariants.iconLine}
+          initial="initial"
+          animate="animate"
+          exit="initial"
           fill="#263238"
           d="M424.62 361.19a1.43 1.43 0 01-1.42-1.43v-2.25a12.14 12.14 0 012.08-6.81 1.43 1.43 0 012.36 1.6 9.27 9.27 0 00-1.59 5.21v2.25a1.43 1.43 0 01-1.43 1.43z"
-        ></path>
-        <path
+        ></motion.path>
+        <motion.path
+          variants={svgVariants.iconLine}
+          initial="initial"
+          animate="animate"
+          exit="initial"
           fill="#263238"
           d="M452.24 352.22a.72.72 0 01-.59-.31 10 10 0 00-8.33-4.44h-7.94a10.06 10.06 0 00-8.33 4.43.71.71 0 01-1.18-.8 11.45 11.45 0 019.51-5.06h7.94a11.48 11.48 0 019.52 5.07.71.71 0 01-.2 1 .72.72 0 01-.4.11z"
-        ></path>
-        <path
+        ></motion.path>
+        <motion.path
+          variants={svgVariants.iconLine}
+          initial="initial"
+          animate="animate"
+          exit="initial"
           fill="#263238"
           d="M454.08 361.19a1.43 1.43 0 01-1.43-1.43v-2.25a9.26 9.26 0 00-1.59-5.2 1.43 1.43 0 112.37-1.6 12.1 12.1 0 012.07 6.8v2.25a1.43 1.43 0 01-1.42 1.43z"
-        ></path>
-        <path
+        ></motion.path>
+        <motion.path
+          variants={svgVariants.iconLine}
+          initial="initial"
+          animate="animate"
+          exit="initial"
           fill="#fff"
           stroke="#263238"
           strokeLinecap="round"
           strokeLinejoin="round"
           d="M424.8 367.47h0a2.82 2.82 0 01-2.82-2.82v-4.49a2.82 2.82 0 012.82-2.82h0a2.82 2.82 0 012.82 2.82v4.49a2.83 2.83 0 01-2.82 2.82z"
-        ></path>
-        <path
+        ></motion.path>
+        <motion.path
+          variants={svgVariants.iconLine}
+          initial="initial"
+          animate="animate"
+          exit="initial"
           fill="#92E3A9"
           stroke="#263238"
           strokeLinecap="round"
           strokeLinejoin="round"
           d="M424.51 357.34H425.09V367.46H424.51z"
-        ></path>
+        ></motion.path>
         <rect
           width="5.64"
           height="10.12"
@@ -645,195 +797,344 @@ function Icon() {
           strokeLinejoin="round"
           rx="2.82"
         ></rect>
-        <path
+        <motion.path
+          variants={svgVariants.iconLine}
+          initial="initial"
+          animate="animate"
+          exit="initial"
           fill="#92E3A9"
           stroke="#263238"
           strokeLinecap="round"
           strokeLinejoin="round"
           d="M453.27 357.34H453.84999999999997V367.46H453.27z"
-        ></path>
-        <path
+        ></motion.path>
+        <motion.path
+          variants={svgVariants.iconLine}
+          initial="initial"
+          animate="animate"
+          exit="initial"
           fill="#92E3A9"
           stroke="#263238"
           strokeLinecap="round"
           strokeLinejoin="round"
           d="M439.33 356.42h0a6 6 0 005-2.72l1.23-1.9a13 13 0 00-12.72.09l1.84 2.3a6 6 0 004.65 2.23z"
-        ></path>
+        ></motion.path>
         <circle cx="439.43" cy="368.52" r="0.21" fill="#263238"></circle>
         <circle cx="439.43" cy="369.26" r="0.21" fill="#263238"></circle>
-        <path
+        <motion.path
+          variants={svgVariants.iconLine}
+          initial="initial"
+          animate="animate"
+          exit="initial"
           fill="#263238"
           d="M438.81 369.14a.21.21 0 00.14-.26.23.23 0 00-.27-.14.22.22 0 00-.14.26.21.21 0 00.27.14zM440.12 369.14a.21.21 0 00.14-.26.22.22 0 00-.27-.14.2.2 0 00-.13.26.2.2 0 00.26.14z"
-        ></path>
-        <path
+        ></motion.path>
+        <motion.path
+          variants={svgVariants.iconLine}
+          initial="initial"
+          animate="animate"
+          exit="initial"
           fill="#92E3A9"
           stroke="#263238"
           strokeLinecap="round"
           strokeLinejoin="round"
           d="M333.31 411.83L412.88 411.83 412.88 361.23 412.88 351.83 403.47 361.23 333.31 361.23 333.31 411.83z"
-        ></path>
-        <path
+        ></motion.path>
+        <motion.path
+          variants={svgVariants.iconLine}
+          initial="initial"
+          animate="animate"
+          exit="initial"
           fill="none"
           stroke="#263238"
           strokeLinecap="round"
           strokeLinejoin="round"
           d="M386.44 372.93L405.17 372.93"
-        ></path>
-        <path
+        ></motion.path>
+        <motion.path
+          variants={svgVariants.iconLine}
+          initial="initial"
+          animate="animate"
+          exit="initial"
           fill="none"
           stroke="#263238"
           strokeLinecap="round"
           strokeLinejoin="round"
           d="M360.23 372.93L381.63 372.93"
-        ></path>
-        <path
+        ></motion.path>
+        <motion.path
+          variants={svgVariants.iconLine}
+          initial="initial"
+          animate="animate"
+          exit="initial"
           fill="none"
           stroke="#263238"
           strokeLinecap="round"
           strokeLinejoin="round"
           d="M344.18 372.93L356.48 372.93"
-        ></path>
-        <path
+        ></motion.path>
+        <motion.path
+          variants={svgVariants.iconLine}
+          initial="initial"
+          animate="animate"
+          exit="initial"
           fill="none"
           stroke="#263238"
           strokeLinecap="round"
           strokeLinejoin="round"
           d="M377.88 378.82L405.17 378.82"
-        ></path>
-        <path
+        ></motion.path>
+        <motion.path
+          variants={svgVariants.iconLine}
+          initial="initial"
+          animate="animate"
+          exit="initial"
           fill="none"
           stroke="#263238"
           strokeLinecap="round"
           strokeLinejoin="round"
           d="M344.18 378.82L373.07 378.82"
-        ></path>
-        <path
+        ></motion.path>
+        <motion.path
+          variants={svgVariants.iconLine}
+          initial="initial"
+          animate="animate"
+          exit="initial"
           fill="none"
           stroke="#263238"
           strokeLinecap="round"
           strokeLinejoin="round"
           d="M399.82 384.7L405.17 384.7"
-        ></path>
-        <path
+        ></motion.path>
+        <motion.path
+          variants={svgVariants.iconLine}
+          initial="initial"
+          animate="animate"
+          exit="initial"
           fill="none"
           stroke="#263238"
           strokeLinecap="round"
           strokeLinejoin="round"
           d="M369.86 384.7L395.54 384.7"
-        ></path>
-        <path
+        ></motion.path>
+        <motion.path
+          variants={svgVariants.iconLine}
+          initial="initial"
+          animate="animate"
+          exit="initial"
           fill="none"
           stroke="#263238"
           strokeLinecap="round"
           strokeLinejoin="round"
           d="M344.18 384.7L365.58 384.7"
-        ></path>
-        <path
+        ></motion.path>
+        <motion.path
+          variants={svgVariants.iconLine}
+          initial="initial"
+          animate="animate"
+          exit="initial"
           fill="none"
           stroke="#263238"
           strokeLinecap="round"
           strokeLinejoin="round"
           d="M386.44 389.52L405.17 389.52"
-        ></path>
-        <path
+        ></motion.path>
+        <motion.path
+          variants={svgVariants.iconLine}
+          initial="initial"
+          animate="animate"
+          exit="initial"
           fill="none"
           stroke="#263238"
           strokeLinecap="round"
           strokeLinejoin="round"
           d="M360.23 389.52L381.63 389.52"
-        ></path>
-        <path
+        ></motion.path>
+        <motion.path
+          variants={svgVariants.iconLine}
+          initial="initial"
+          animate="animate"
+          exit="initial"
           fill="none"
           stroke="#263238"
           strokeLinecap="round"
           strokeLinejoin="round"
           d="M344.18 389.52L356.48 389.52"
-        ></path>
-        <path
+        ></motion.path>
+        <motion.path
+          variants={svgVariants.iconLine}
+          initial="initial"
+          animate="animate"
+          exit="initial"
           fill="none"
           stroke="#263238"
           strokeLinecap="round"
           strokeLinejoin="round"
           d="M377.88 395.4L405.17 395.4"
-        ></path>
-        <path
+        ></motion.path>
+        <motion.path
+          variants={svgVariants.iconLine}
+          initial="initial"
+          animate="animate"
+          exit="initial"
           fill="none"
           stroke="#263238"
           strokeLinecap="round"
           strokeLinejoin="round"
           d="M344.18 395.4L373.07 395.4"
-        ></path>
-        <path
+        ></motion.path>
+        <motion.path
+          variants={svgVariants.iconLine}
+          initial="initial"
+          animate="animate"
+          exit="initial"
           fill="none"
           stroke="#263238"
           strokeLinecap="round"
           strokeLinejoin="round"
           d="M399.82 401.28L405.17 401.28"
-        ></path>
-        <path
+        ></motion.path>
+        <motion.path
+          variants={svgVariants.iconLine}
+          initial="initial"
+          animate="animate"
+          exit="initial"
           fill="none"
           stroke="#263238"
           strokeLinecap="round"
           strokeLinejoin="round"
           d="M369.86 401.28L395.54 401.28"
-        ></path>
-        <path
+        ></motion.path>
+        <motion.path
+          variants={svgVariants.iconLine}
+          initial="initial"
+          animate="animate"
+          exit="initial"
           fill="none"
           stroke="#263238"
           strokeLinecap="round"
           strokeLinejoin="round"
           d="M344.18 401.28L365.58 401.28"
-        ></path>
-        <path
+        ></motion.path>
+
+        <motion.path
+          variants={svgVariants.iconLine}
+          initial="initial"
+          animate="animate"
+          exit="initial"
           fill="none"
-          stroke="#263238"
+          stroke="#fff"
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth="2"
           d="M453 55.58h-41.28a10 10 0 01-9.81 8.14h-59.1a10 10 0 01-9.81-8.14h-41.23a13 13 0 00-13 13v349a13 13 0 0013 13H453a13 13 0 0013-13v-349a13 13 0 00-13-13z"
-        ></path>
-        <path
+        ></motion.path>
+        <motion.path
+          variants={svgVariants.iconLine}
+          initial="initial"
+          animate="animate"
+          exit="initial"
           fill="none"
-          stroke="#263238"
+          stroke="#fff"
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth="2"
           d="M466 79.13V68.59a13 13 0 00-13-13h-41.28a10 10 0 01-9.81 8.14h-59.1a10 10 0 01-9.81-8.15h-41.23a13 13 0 00-13 13v10.55z"
-        ></path>
-        <path
-          fill="#263238"
+        ></motion.path>
+        <motion.path
+          variants={svgVariants.iconLine}
+          initial="initial"
+          animate="animate"
+          exit="initial"
+          fill="#fff"
           d="M295.92 65c0 2.56-2.88 3.48-2.89 5.43v.13h2.79v.87h-3.72v-.73c0-2.7 2.9-3.28 2.9-5.7 0-.88-.29-1.34-1-1.34s-1 .5-1 1.25v.75h-.88V65c0-1.3.59-2.16 1.9-2.16s1.9.86 1.9 2.16zM300.56 65v.22a1.68 1.68 0 01-1 1.74 1.68 1.68 0 011 1.76v.65c0 1.3-.61 2.15-1.91 2.15s-1.91-.85-1.91-2.15v-.58h.89v.64c0 .77.31 1.23 1 1.23s1-.45 1-1.31v-.65c0-.84-.36-1.24-1.07-1.27H298v-.84h.56a1 1 0 001-1.17V65c0-.87-.31-1.32-1-1.32s-1 .47-1 1.24v.44h-.89V65c0-1.3.61-2.14 1.91-2.14s1.98.83 1.98 2.14zM302.39 65.63v1.18h-.91v-1.18zm0 4.62v1.18h-.91v-1.18zM304.31 66.39a1.37 1.37 0 011.26-.7c1.09 0 1.58.8 1.58 2v1.66c0 1.3-.62 2.15-1.92 2.15s-1.9-.85-1.9-2.15v-.57h.88v.63c0 .77.32 1.23 1 1.23s1-.46 1-1.23v-1.63c0-.77-.31-1.23-1-1.23a.91.91 0 00-1 .91v.19h-.89l.23-4.71h3.35v.85h-2.5zM311.86 65v.15H311v-.22c0-.76-.32-1.21-1-1.21s-1 .46-1 1.37V67a1.36 1.36 0 011.37-.91c1.09 0 1.58.78 1.58 2v1.28c0 1.3-.64 2.15-1.94 2.15s-2.01-.86-2.01-2.16V65c0-1.35.6-2.19 1.95-2.19s1.91.87 1.91 2.19zm-2.92 3.17v1.27c0 .77.32 1.23 1 1.23s1-.46 1-1.23v-1.29c0-.76-.33-1.22-1-1.22s-1 .46-1 1.22z"
-        ></path>
-        <path
-          fill="#263238"
+        ></motion.path>
+        <motion.path
+          variants={svgVariants.iconLine}
+          initial="initial"
+          animate="animate"
+          exit="initial"
+          fill="#fff"
           d="M414.27 65.35H416.66999999999996V71.33999999999999H414.27z"
-        ></path>
-        <path fill="#263238" d="M417.47 64.15H419.87V71.34H417.47z"></path>
-        <path fill="#263238" d="M420.66 63.3H423.06V71.34H420.66z"></path>
-        <path fill="#263238" d="M423.86 61.81H426.26V71.34H423.86z"></path>
-        <path
-          fill="#263238"
+        ></motion.path>
+        <motion.path
+          variants={svgVariants.iconLine}
+          initial="initial"
+          animate="animate"
+          exit="initial"
+          fill="#fff"
+          d="M417.47 64.15H419.87V71.34H417.47z"
+        ></motion.path>
+        <motion.path
+          variants={svgVariants.iconLine}
+          initial="initial"
+          animate="animate"
+          exit="initial"
+          fill="#fff"
+          d="M420.66 63.3H423.06V71.34H420.66z"
+        ></motion.path>
+        <motion.path
+          variants={svgVariants.iconLine}
+          initial="initial"
+          animate="animate"
+          exit="initial"
+          fill="#fff"
+          d="M423.86 61.81H426.26V71.34H423.86z"
+        ></motion.path>
+        <motion.path
+          variants={svgVariants.iconLine}
+          initial="initial"
+          animate="animate"
+          exit="initial"
+          fill="#fff"
           d="M455.91 71.17h-14.38v-8.78h14.38zm-13.58-.79h12.78v-7.19h-12.78z"
-        ></path>
-        <path
-          fill="#263238"
+        ></motion.path>
+        <motion.path
+          variants={svgVariants.iconLine}
+          initial="initial"
+          animate="animate"
+          exit="initial"
+          fill="#ffff"
           d="M443.53 64.06H451.11999999999995V69.51H443.53z"
-        ></path>
-        <path fill="#263238" d="M455.41 65.75H457.22V67.82H455.41z"></path>
-        <path
-          fill="#263238"
+        ></motion.path>
+        <motion.path
+          variants={svgVariants.iconLine}
+          initial="initial"
+          animate="animate"
+          exit="initial"
+          fill="#fff"
+          d="M455.41 65.75H457.22V67.82H455.41z"
+        ></motion.path>
+        <motion.path
+          variants={svgVariants.iconLine}
+          initial="initial"
+          animate="animate"
+          exit="initial"
+          fill="#fff"
           d="M436.26 69.26a.52.52 0 01-.27-.07c-2.93-1.74-4.86-.13-4.94-.06a.54.54 0 11-.71-.81c.1-.09 2.58-2.21 6.2-.06a.55.55 0 01.18.74.53.53 0 01-.46.26z"
-        ></path>
-        <path
-          fill="#263238"
+        ></motion.path>
+        <motion.path
+          variants={svgVariants.iconLine}
+          initial="initial"
+          animate="animate"
+          exit="initial"
+          fill="#fff"
           d="M437.34 67.46a.53.53 0 01-.27-.08c-4.23-2.51-7.08-.08-7.11-.06a.53.53 0 11-.7-.8s3.46-3 8.36-.06a.54.54 0 01.18.74.54.54 0 01-.46.26z"
-        ></path>
-        <path
-          fill="#263238"
+        ></motion.path>
+        <motion.path
+          variants={svgVariants.iconLine}
+          initial="initial"
+          animate="animate"
+          exit="initial"
+          fill="#fff"
           d="M438.33 65.37a.57.57 0 01-.28-.08c-5.36-3.18-8.92-.18-9.07-.05a.54.54 0 01-.71-.81c.05 0 4.28-3.66 10.33-.06a.54.54 0 01.19.74.55.55 0 01-.46.26zM434.64 70.16a1.35 1.35 0 11-1.34-1.34 1.34 1.34 0 011.34 1.34z"
-        ></path>
-      </g>
-      <g
+        ></motion.path>
+      </motion.g>
+      <motion.g
+        variants={svgVariants.iconCircle}
+        initial="initial"
+        animate="animate"
+        exit="initial"
         fill="none"
         stroke="#263238"
         strokeLinecap="round"
@@ -842,8 +1143,13 @@ function Icon() {
         <path d="M451 446.51L472 446.51"></path>
         <path d="M55 446.51L444 446.51"></path>
         <path d="M27.65 446.51L42 446.51"></path>
-      </g>
-      <g>
+      </motion.g>
+      <motion.g
+        variants={svgVariants.background}
+        initial="initial"
+        animate="animate"
+        exit="initial"
+      >
         <path
           fill="#263238"
           stroke="#263238"
@@ -1260,8 +1566,16 @@ function Icon() {
           strokeLinejoin="round"
           d="M171.06 359.3H177.29V365.53000000000003H171.06z"
         ></path>
-      </g>
-      <g stroke="#263238" strokeLinecap="round" strokeLinejoin="round">
+      </motion.g>
+      <motion.g
+        variants={svgVariants.background}
+        initial="initial"
+        animate="animate"
+        exit="initial"
+        stroke="#263238"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
         <path
           fill="#fff"
           d="M77.06 393.56H187.9a5 5 0 015 5v62.27h0H72.06h0v-62.27a5 5 0 015-5z"
@@ -1278,7 +1592,7 @@ function Icon() {
           fill="#fff"
           d="M138.71 427.2a6.23 6.23 0 11-6.23-6.23 6.23 6.23 0 016.23 6.23z"
         ></path>
-      </g>
+      </motion.g>
     </svg>
   );
 }
