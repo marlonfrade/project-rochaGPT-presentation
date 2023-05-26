@@ -2,18 +2,20 @@
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
+import Banner from "@components/banner.astro";
 ---
 
 <Layout title="Planos">
+  <Banner />
   <Container>
     <Sectionhead>
       <Fragment slot="title">Planos</Fragment>
       <Fragment slot="desc">
-        Em breve novidades para as comunidades no discord.
+        Venha fazer parte da nova waitlist do RochaGPT
       </Fragment>
     </Sectionhead>
   </Container>
-  <div class="xl:container m-auto px-6 py-10 md:px-12 lg:px-20">
+  <div class="m-auto px-6 py-10 xl:container md:px-12 lg:px-20">
     <div class="mt-12 grid items-center gap-6 lg:flex lg:space-x-8">
       <div class="group relative md:col-span-1 lg:w-[32%]">
         <div
@@ -55,23 +57,27 @@ import Sectionhead from "@components/sectionhead.astro";
             </li>
             <li class="space-x-2">
               <span class="font-semibold text-primary">&check;</span>
-              <span>Leitura e processamento de APIs</span>
+              <span>Leitura e processamento de APIs *</span>
             </li>
             <li class="space-x-2">
               <span class="font-semibold text-primary">&check;</span>
-              <span>Ajuste Fino (treinamento da IA)</span>
+              <span>Ajuste Fino (treinamento da IA) *</span>
             </li>
             <li class="space-x-2">
               <span class="font-semibold text-primary">&check;</span>
-              <span>Contratação de um número</span>
+              <span>Contratação de um número *</span>
             </li>
             <li class="space-x-2">
               <span class="font-semibold text-primary">&check;</span>
-              <span>Personalização do BOT</span>
+              <span>Personalização do BOT *</span>
             </li>
             <li class="space-x-2">
               <span class="font-semibold text-primary">&check;</span>
-              <span>Disparo de alertas em grupos</span>
+              <span>Disparo de alertas em grupos *</span>
+            </li>
+            <li class="space-x-2">
+              <span class="font-semibold text-primary">*</span>
+              <span>Serviços contratados a parte</span>
             </li>
           </ul>
           <a
@@ -93,7 +99,7 @@ import Sectionhead from "@components/sectionhead.astro";
         >
         </div>
         <div class="relative space-y-8 p-8">
-          <h3 class="text-center pt-4 text-3xl font-semibold text-white">
+          <h3 class="pt-4 text-center text-3xl font-semibold text-white">
             Plano Exclusivo!
           </h3>
           <div class="overflow-hidden">
@@ -148,23 +154,27 @@ import Sectionhead from "@components/sectionhead.astro";
             </li>
             <li class="space-x-2">
               <span class="font-semibold text-primary">&check;</span>
-              <span>Leitura e processamento de APIs</span>
+              <span>Leitura e processamento de APIs *</span>
             </li>
             <li class="space-x-2">
               <span class="font-semibold text-primary">&check;</span>
-              <span>Ajuste Fino (treinamento da IA)</span>
+              <span>Ajuste Fino (treinamento da IA) *</span>
             </li>
             <li class="space-x-2">
               <span class="font-semibold text-primary">&check;</span>
-              <span>Contratação de um número exclusivo</span>
+              <span>Contratação de um número exclusivo *</span>
             </li>
             <li class="space-x-2">
               <span class="font-semibold text-primary">&check;</span>
-              <span>Personalização do BOT</span>
+              <span>Personalização do BOT *</span>
             </li>
             <li class="space-x-2">
               <span class="font-semibold text-primary">&check;</span>
-              <span>Disparo de alertas em grupos</span>
+              <span>Disparo de alertas em grupos *</span>
+            </li>
+            <li class="space-x-2">
+              <span class="font-semibold text-primary">*</span>
+              <span>Serviços solicitados a parte</span>
             </li>
           </ul>
           <a
