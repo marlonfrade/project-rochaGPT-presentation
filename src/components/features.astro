@@ -44,25 +44,25 @@ const features = [
 
 <section class="lg:px-8">
   <div class="mt-16 md:mt-24">
-    <h2 class="md:max-w-4xl text-4xl lg:text-5xl font-bold leading-10">
+    <h2 class="text-4xl font-bold leading-10 md:max-w-4xl lg:text-5xl">
       Transforme seu WhatsApp em uma ferramenta de inteligência artificial com a
       plataforma RochaGPT
     </h2>
-    <p class="text-lg my-8 text-slate-600">
+    <p class="my-8 text-lg text-slate-600">
       O que o RochaGPT está preparando para aprimorar sua experiência:
     </p>
   </div>
 
-  <div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
+  <div class="mt-16 grid gap-16 sm:grid-cols-2 md:grid-cols-3">
     {
       features.map((item) => (
-        <div class="flex gap-4 items-start">
-          <div class="mt-1 bg-black rounded-full  p-2 w-8 h-8 shrink-0">
+        <div class="flex items-start gap-4">
+          <div class="mt-1 h-8 w-8  shrink-0 rounded-full bg-green-700 p-2">
             <Icon class="text-white" name={item.icon} />
           </div>
           <div>
-            <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
-            <p class="text-slate-500 mt-2 leading-relaxed">
+            <h3 class="text-lg font-semibold">{item.title}</h3>{" "}
+            <p class="mt-2 leading-relaxed text-slate-500">
               {item.description}
             </p>
           </div>

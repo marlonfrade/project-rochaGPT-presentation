@@ -1,6 +1,4 @@
 ---
-import { Picture } from "@astrojs/image/components";
-import QrCode from "@assets/rochagpt-qrCode.png";
 import SpamIcon from "@assets/spam-icon.svg";
 import HubIcon from "@assets/hub-icon.svg";
 ---
@@ -35,23 +33,14 @@ import HubIcon from "@assets/hub-icon.svg";
           >
             Falar com o RochaGPT
           </a>
-          <a href="/about" class="text-sm font-semibold leading-6 text-white">
-            Sobre o projeto <span aria-hidden="true">→</span>
+          <a href="/pricing" class="text-sm font-semibold leading-6 text-white">
+            Veja nossos planos <span aria-hidden="true">→</span>
           </a>
         </div>
       </div>
       <dl class="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:pt-2">
         <div class="flex flex-col items-start">
           <div class="rounded-lg bg-white/5 p-2 ring-1 ring-white/10">
-            <Picture
-              src={QrCode}
-              alt="Astronaut in the air"
-              widths={[200, 400, 600, 800]}
-              sizes="(max-width: 500px) 10vw, 100%"
-              loading="eager"
-              format="avif"
-            />
-
             <img class="h-6 w-6 text-white" src={HubIcon} />
           </div>
           <dt class="mt-4 font-semibold text-white">Inteligência Artifical</dt>
@@ -92,8 +81,8 @@ import HubIcon from "@assets/hub-icon.svg";
         y2="474.645"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#9089FC"></stop>
-        <stop offset={1} stop-color="#FF80B5"></stop>
+        <stop stop-color="#00efa0"></stop>
+        <stop offset={1} stop-color="#1f5fab"></stop>
       </linearGradient>
     </defs>
   </svg>

@@ -3,22 +3,48 @@ import Link from "./ui/link.astro";
 ---
 
 <div
-  class="isolate bg-black p-8 md:px-24 md:py-20 mt-20 mx-auto flex flex-col items-center text-center"
+  class="relative isolate overflow-hidden bg-gray-900 py-16 sm:py-24 lg:py-32"
 >
-  <h2 class="text-white text-3xl md:text-5xl tracking-tight">
-    Organize suas comunidades e tenha um assistente digital
-  </h2>
-  <p class="text-slate-400 mt-4 text-lg md:text-xl">
-    Aprimore sua comunicação no WhatsApp com segurança utilizando a tecnologia
-    de IA RochaGPT.
-  </p>
-  <div class="flex mt-5">
-    <Link
-      target="_blank"
-      href="https://wa.me/554789099607?text=Olá,%20RochatGPT!"
-      style="inverted"
-    >
-      Fale com o RochaGPT
-    </Link>
+  <div class="mx-auto text-center">
+    <h2 class="text-3xl tracking-tight text-white md:text-5xl">
+      Organize suas comunidades e tenha um assistente digital
+    </h2>
+    <p class="mt-4 text-lg text-slate-400 md:text-xl">
+      Aprimore sua comunicação no WhatsApp com segurança utilizando a tecnologia
+      de IA RochaGPT.
+    </p>
+    <div class="mt-5 flex items-center justify-center">
+      <Link
+        target="_blank"
+        href="https://wa.me/554789099607?text=Olá,%20RochatGPT!"
+        style="inverted"
+      >
+        Fale com o RochaGPT
+      </Link>
+    </div>
   </div>
+  <svg
+    class="absolute left-1/2 top-0 -z-10 h-[42.375rem] -translate-x-1/2 blur-3xl xl:-top-6"
+    viewBox="0 0 1155 678"
+    fill="none"
+  >
+    <path
+      fill="url(#09dbde42-e95c-4b47-a4d6-0c523c2fca9a)"
+      fill-opacity=".3"
+      d="M317.219 518.975L203.852 678 0 438.341l317.219 80.634 204.172-286.402c1.307 132.337 45.083 346.658 209.733 145.248C936.936 126.058 882.053-94.234 1031.02 41.331c119.18 108.451 130.68 295.337 121.53 375.223L855 299l21.173 362.054-558.954-142.079z"
+    ></path>
+    <defs>
+      <linearGradient
+        id="09dbde42-e95c-4b47-a4d6-0c523c2fca9a"
+        x1="1155.49"
+        x2="-78.208"
+        y1=".177"
+        y2="474.645"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stop-color="#00efa0"></stop>
+        <stop offset={1} stop-color="#1f5fab"></stop>
+      </linearGradient>
+    </defs>
+  </svg>
 </div>

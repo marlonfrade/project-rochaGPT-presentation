@@ -56,19 +56,19 @@ const menuitems = [
 ---
 
 <Container>
-  <header class="flex flex-col lg:flex-row justify-between items-center my-5">
+  <header class="my-5 flex flex-col items-center justify-between lg:flex-row">
     <Astronav>
-      <div class="flex w-full lg:w-auto items-center justify-between">
+      <div class="flex w-full items-center justify-between lg:w-auto">
         <a href="/" class="text-lg"
-          ><span class="font-bold text-primary">Rocha</span><span
-            class="text-secondary">GPT</span
+          ><span class="font-bold text-green-500">Rocha</span><span
+            class="text-gray-800">GPT</span
           >
         </a>
         <div class="block lg:hidden">
-          <MenuIcon class="w-4 h-4 text-gray-800" />
+          <MenuIcon class="h-4 w-4 text-gray-800" />
         </div>
       </div>
-      <MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0">
+      <MenuItems class="mt-2 hidden w-full lg:mt-0 lg:flex lg:w-auto">
         <ul class="flex flex-col lg:flex-row lg:gap-3">
           {
             menuitems.map((item, index) => (
@@ -85,7 +85,7 @@ const menuitems = [
                   <li>
                     <a
                       href={item.path}
-                      class="flex lg:px-3 py-2 text-gray-600 hover:text-gray-900"
+                      class="flex py-2 text-gray-600 hover:text-gray-900 lg:px-3"
                     >
                       {item.title}
                     </a>
@@ -95,7 +95,7 @@ const menuitems = [
             ))
           }
         </ul>
-        <div class="lg:hidden flex items-center mt-3 gap-4">
+        <div class="mt-3 flex items-center gap-4 lg:hidden">
           <Link
             href="https://wa.me/554789099607?text=Olá,%20RochatGPT!"
             target="_blank"
@@ -107,8 +107,9 @@ const menuitems = [
       </MenuItems>
     </Astronav>
     <div>
-      <div class="hidden lg:flex items-center gap-4">
+      <div class="hidden items-center gap-4 lg:flex">
         <Link
+          style={"outline"}
           href="https://wa.me/554789099607?text=Olá,%20RochatGPT!"
           target="_blank"
           size="md"

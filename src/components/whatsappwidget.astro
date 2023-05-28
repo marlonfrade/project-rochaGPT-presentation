@@ -1,0 +1,111 @@
+---
+import { Picture } from "@astrojs/image/components";
+import RochaProfilePic from "@assets/profile-pic.png";
+---
+
+<div id="app">
+  <div id="whatsapp-chat" class="hide">
+    <div class="whatsapp-chat-header">
+      <div class="whatsapp-chat-avatar">
+        <Picture
+          src={RochaProfilePic}
+          alt=""
+          widths={[200, 400, 600, 800]}
+          sizes="(max-width: 500px) 10vw, 100%"
+          loading="eager"
+          format="png"
+        />
+      </div>
+      <p>
+        <span class="whatsapp-chat-name">RochaGPT</span>
+        <br />
+        <small style="float: left;">online</small>
+      </p>
+    </div>
+    <div class="whatsapp-chat-body">
+      <div class="whatsapp-chat-bubble">
+        <div class="whatsapp-chat-message-loader" style="opacity: 0;">
+          <div style="position: relative;display: flex;">
+            <div class="ixsrax"></div>
+            <div class="dRvxoz"></div>
+            <div class="kXBtNt"></div>
+          </div>
+        </div>
+        <div class="whatsapp-chat-message" style="opacity: 1;">
+          <div class="bMIBDo">RochaGPT</div>
+          <div class="iSpIQi">
+            Olá, eu sou o RochaGPT👋<br /><br />como posso te ajudar?
+          </div>
+          <div class="cqCDVm">10:51</div>
+        </div>
+      </div>
+    </div>
+    <form id="whatsapp-form" class="whatsapp-message-box">
+      <textarea
+        whatsapp-message
+        placeholder="Escreva sua mensagem"
+        maxlength="120"></textarea>
+      <button type="submit"
+        ><svg viewBox="0 0 448 448"
+          ><path d="M.213 32L0 181.333 320 224 0 266.667.213 416 448 224z"
+          ></path></svg
+        ></button
+      >
+    </form>
+    <button id="whatsapp-close-chat" type="button" class="close-chat">×</button>
+  </div>
+  <button
+    id="whatsapp-trigger-chat"
+    class="whatsapp-trigger-chat"
+    title="Show Chat"
+    ><svg width="18" viewBox="0 0 24 24"
+      ><path
+        fill="#eceff1"
+        d="M20.5 3.4A12.1 12.1 0 0012 0 12 12 0 001.7 17.8L0 24l6.3-1.7c2.8 1.5 5 1.4 5.8 1.5a12 12 0 008.4-20.3z"
+      ></path><path
+        fill="#4caf50"
+        d="M12 21.8c-3.1 0-5.2-1.6-5.4-1.6l-3.7 1 1-3.7-.3-.4A9.9 9.9 0 012.1 12a10 10 0 0117-7 9.9 9.9 0 01-7 16.9z"
+      ></path><path
+        fill="#fafafa"
+        d="M17.5 14.3c-.3 0-1.8-.8-2-.9-.7-.2-.5 0-1.7 1.3-.1.2-.3.2-.6.1s-1.3-.5-2.4-1.5a9 9 0 01-1.7-2c-.3-.6.4-.6 1-1.7l-.1-.5-1-2.2c-.2-.6-.4-.5-.6-.5-.6 0-1 0-1.4.3-1.6 1.8-1.2 3.6.2 5.6 2.7 3.5 4.2 4.2 6.8 5 .7.3 1.4.3 1.9.2.6 0 1.7-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.6-.4z"
+      ></path></svg
+    >
+    <span> Fale com o RochaGPT</span></button
+  >
+
+  <script is:inline>
+    const whatsappTrigger = document.getElementById("whatsapp-trigger-chat");
+    const closeWhatsapp = document.getElementById("whatsapp-close-chat");
+    const whatsappForm = document.getElementById("whatsapp-form");
+
+    whatsappForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const textValue = document.querySelector("[whatsapp-message]").value;
+      const link =
+        "https://wa.me/554789099607?text=" + encodeURIComponent(textValue);
+      window.location.href = link;
+      document.querySelector("[whatsapp-message]").value = "";
+    });
+
+    function toogleChat() {
+      const whatsappChat = document.getElementById("whatsapp-chat");
+      console.log(whatsappChat.classList);
+
+      if (whatsappChat.classList.contains("hide")) {
+        whatsappChat?.classList.add("show");
+        whatsappChat?.classList.remove("hide");
+      } else {
+        whatsappChat?.classList.remove("show");
+        whatsappChat?.classList.add("hide");
+      }
+    }
+
+    closeWhatsapp?.addEventListener("click", () => {
+      toogleChat();
+    });
+
+    whatsappTrigger?.addEventListener("click", () => {
+      toogleChat();
+    });
+  </script>
+</div>

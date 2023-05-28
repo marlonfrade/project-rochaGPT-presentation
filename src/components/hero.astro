@@ -1,17 +1,15 @@
 ---
-import { Picture } from "@astrojs/image/components";
-import heroImage from "@assets/rochaGPT.png";
+import { Image } from "@astrojs/image/components";
+import heroImage from "@assets/rochagpt-cta.png";
 import Link from "@components/ui/link.astro";
 import { Icon } from "astro-icon";
 ---
 
-<main class="grid place-items-center pt-16 md:pb-0 md:pt-12 lg:grid-cols-2">
-  <div class="hidden py-6 md:order-1 md:block">
-    <Picture
+<main class="grid place-items-center lg:grid-cols-2">
+  <div class="hidden md:order-1 md:block">
+    <Image
       src={heroImage}
       alt="Astronaut in the air"
-      widths={[200, 400, 600, 800]}
-      sizes="(max-width: 500px) 10vw, 100%"
       loading="eager"
       format="avif"
     />
@@ -29,28 +27,27 @@ import { Icon } from "astro-icon";
     </p>
     <div class="mt-6 flex flex-col gap-3 sm:flex-row">
       <Link
-        href="#"
-        href="/roadmap"
+        href="https://wa.me/554789099607?text=Olá,%20RochatGPT!"
         class="flex items-center justify-center gap-1"
         rel="noopener"
       >
         <Icon
           class="h-5 w-5 text-white"
-          name="raphael:roadmap"
+          name="fontisto:whatsapp"
           optimize="true"
         />
 
-        Roadmap
+        Fale com o RochaGPT
       </Link>
       <Link
         size="lg"
         style="outline"
         rel="noopener"
-        href="/about"
+        href="/pricing"
         class="flex items-center justify-center gap-1"
       >
-        <Icon class="h-4 w-4 text-black" name="raphael:diagram" />
-        Sobre o projeto
+        <Icon class="h-4 w-4 text-black" name="ic:sharp-workspace-premium" />
+        Veja nossos Planos
       </Link>
     </div>
   </div>
